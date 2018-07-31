@@ -1,2 +1,2 @@
 #Identifiers.org Documenatiation
-1. [Identification scheme](identification_scheme.md)
+1. [Identification scheme](docs/identification_scheme.md)
