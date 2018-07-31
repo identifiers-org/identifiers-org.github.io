@@ -11,7 +11,7 @@ Examples of such URIs:
 * https://identifiers.org/taxonomy/9606
 * https://identifiers.org/ec-code/1.1.1.1
 
-** Those URIs should be used in most cases, as they directly identify the data.**
+** Those URIs should be used in most cases, as they directly identify the data. **
 
 ## Identification of Registry's records
 Identification and reference to Registry's record is done via URIs of the form: http://info.identifiers.org/[collection]/[entity].
