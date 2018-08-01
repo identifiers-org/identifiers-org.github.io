@@ -1,5 +1,5 @@
 # Resolving mechanisms
-A central, curated registry stores the information necessary to resolve either URI or Compact Identifiers forms of identifier, which are sent as queries to the Identifiers.org resolving system.
+A central, curated registry stores the information necessary to resolve either Compact Identifier or URI forms of identifier, which are sent as queries to the Identifiers.org resolving system.
 
 ## Compact Identifier resolution
 Identifiers.org is able to handle queries presented as Compact Identifiers (prefix:accession). A Compact Identifier is a unique string consisting of a **Prefix** (assigned by curator), a colon (‘:’), and a **Local identifier** (eg. accession number string). The **Prefix** is composed of an assigned **Namespace**, which may be preceded by a **Provider Code**, separated by a slash (‘/’).
