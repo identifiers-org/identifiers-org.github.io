@@ -2,7 +2,7 @@
 This FAQ addresses many of the common questions regarding the Registry and its relationship with Identifiers.org .
 
 * [General questions and definitions](#general-questions-and-definitions)
-  * [What is the Registry?](#what-is-the-registry-)
+  * [What is the Registry?](#what-is-the-identifiersorg-registry)
   * [What is MIRIAM, and what does it stand for?](#what-is-miriam--and-what-does-it-stand-for-)
   * [Why can't I find my favourite data collection in the Registry?](#why-can-t-i-find-my-favourite-data-collection-in-the-registry-)
   * [What is a resource?](#what-is-a-resource-)
