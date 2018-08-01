@@ -6,4 +6,4 @@
 [![Open PHACTS](/imgs/OPS_logo.png)](http://www.openphacts.org/)
 [![NIGMS](/imgs/NIGMS_logo.png)]()
 [![BMB](/imgs/BMB_logo.png)](http://www.biomedbridges.eu/)
-[![NIH](/imgs/NIH_logo.png)](https://www.nih.gov)
+[![NIH](/imgs/NIH_logo.png)](https://commonfund.nih.gov/commons)
