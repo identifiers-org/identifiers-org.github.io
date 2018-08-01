@@ -1,3 +1,4 @@
 # How to contact us
 
-You can contact us for assistance using the links on the contact page.
+* Send us an email at identifiers-org@ebi.ac.uk
+* Create a [GitHub issue](https://github.com/identifiers-org/identifiers-org.github.io/issues)
