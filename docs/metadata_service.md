@@ -1,6 +1,6 @@
 # Metadata Service
 
-Identifiers.org metadata service enables users to extract Schema.org from landing pages of the original provider by passing in a Compact Identifier.
+Identifiers.org metadata service enables users to extract Schema.org from landing pages of the original providers by passing in Compact Identifiers.
 
 ``
 http://metadata.api.identifiers.org/{Compact Identifier}
