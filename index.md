@@ -2,6 +2,7 @@
 * [Resolving Mechanisms](docs/resolving_mechanisms.md)
 * [Cloud Identifiers.org](docs/cloud_identifiersorg.md)
 * [SPARQL Endpoint](docs/sparql.md)
+* [Metadata Service](docs/metadata_service.md)
 * [Cite Identifiers.org](docs/citeme.md)
 * [Publications](docs/publications.md)
 * [FAQ](docs/faq.md)
