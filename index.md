@@ -1,4 +1,4 @@
-# Identifiers.org Documenatiation
+# Identifiers.org documentation
 * [Resolving Mechanisms](docs/resolving_mechanisms.md)
 * [Cloud Identifiers.org](docs/cloud_identifiersorg.md)
 * [SPARQL Endpoint](docs/sparql.md)
