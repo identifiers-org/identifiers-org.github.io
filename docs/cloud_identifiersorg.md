@@ -25,12 +25,12 @@
 
     Example:
 
-    - https://identifiers.org/registry/
+    `https://identifiers.org/registry/`
 
     Those should only be used to identify and retrieve metadata provided by the Registry or access information in RDF/XML. Those URIs should NOT be used for identifying data entries.
 
-    # Getting involved
+# Getting involved
 
-    ## Use Cases
+## Use Cases
 
-    ## Code Contributions
+## Code Contributions
