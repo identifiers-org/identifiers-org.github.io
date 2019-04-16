@@ -3,32 +3,35 @@
 ## Identification of data entities using Compact Identifiers
 
 ### Compact Identifiers syntax
-A Compact Identifier is a unique string consisting of a **Prefix** (assigned by curator), a colon (‘:’), and a **Local identifier** (eg. accession number string). The **Prefix** is composed of an assigned **Namespace**, which may be preceded by a **Provider Code**, separated by a slash (‘/’). 
+A Compact Identifier is a unique string consisting of a **Prefix** (assigned by curator), a colon (‘:’), and an **Accession** (e.g. local identifier string). The **Prefix** is composed of an optional **Provider Code**, and an assigned **Namespace**, separated by a slash (‘/’).
+
+### Examples
 
 Compact identifier syntax, with and without provider codes:
 * namespace:accession
+  * [pubmed:22140103](https://identifiers.org/pubmed:22140103)
+  * [https://identifiers.org/ec-code:1.1.1.1](https://identifiers.org/ec-code:1.1.1.1)
+  * [taxonomy:9606](https://identifiers.org/taxonomy:9606)
 * provider_code/namespace:accession
+  * [epmc/pubmed:22140103](https://identifiers.org/epmc/pubmed:22140103)
+  * [ols/taxonomy:9606](https://identifiers.org/ols/taxonomy/9606)
+  * [expasy/ec-code:1.1.1.1](https://identifiers.org/expasy/ec-code:1.1.1.1)
 
-**We recommend using Compact Identifiers for annotation and citation linked using identifiers.org URLs.**
+**To use Compact Identifiers in annotation and citation, link them using identifiers.org URLs.**
 
-## Identification of data entities using canonical URI
-The canonical URI for uniquely identifying data entities is of the form:
+## Linking of data entities using identifiers.org URLs
 
-`https://identifiers.org/[collection]/[entity]`
+### identifiers.org URL syntax
 
-In which one needs to replace [collection] with the namespace of a data collection and [entity] with the identifier of the entity created by the original data provider.
+The URL for uniquely linking to data entities is written in the following form:
 
-Examples of such URIs:
-* https://identifiers.org/pubmed/22140103
-* https://identifiers.org/taxonomy/9606
-* https://identifiers.org/ec-code/1.1.1.1
+`https://identifiers.org/[provider_code/]namespace:accession`
 
-## Identification of Registry's records
-Identification and reference to Registry's record is done via URIs of the form:
+The optional parameter `provider_code` denotes the **Provider Code** part of the **Prefix**. It is trailed by a slash, to separate it from the required `namespace` , which is followed by a colon and the `accession`.
 
-`https://info.identifiers.org/[collection]/[entity]`
+### Examples
 
-Example:
-* https://info.identifiers.org/taxonomy/9606
+* [https://identifiers.org/pubmed:22140103](https://identifiers.org/pubmed:22140103)
+* [https://identifiers.org/ec-code:1.1.1.1](https://identifiers.org/ec-code:1.1.1.1)
+* [https://identifiers.org/ols/taxonomy:9606](https://identifiers.org/ols/taxonomy:9606)
 
-Those should only be used to identify and retrieve metadata provided by the Registry or access information in RDF/XML. Those URIs should NOT be used for identifying data entries.
