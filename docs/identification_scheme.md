@@ -14,8 +14,8 @@ Compact identifier syntax, with and without provider codes:
   * [taxonomy:9606](https://identifiers.org/taxonomy:9606)
 * provider_code/namespace:accession
   * [epmc/pubmed:22140103](https://identifiers.org/epmc/pubmed:22140103)
-  * [ols/taxonomy:9606](https://identifiers.org/ols/taxonomy/9606)
   * [expasy/ec-code:1.1.1.1](https://identifiers.org/expasy/ec-code:1.1.1.1)
+  * [ols/taxonomy:9606](https://identifiers.org/ols/taxonomy/9606)
 
 **To use Compact Identifiers in annotation and citation, link them using identifiers.org URLs.**
 
