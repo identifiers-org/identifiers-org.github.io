@@ -1,0 +1,23 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.descriptiontext {
+    text-align: justify;
+}
+
+.sitetitle {
+    text-align: center;
+}
+
+.page-header {
+    padding: 1rem 1rem;
+}
