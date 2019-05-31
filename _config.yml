@@ -8,7 +8,7 @@ permalink: docs
 
 # Add custom CSS / JS here
 custom_css:
-  - "/docs/static/css/styles.css"
+  - "/static/css/styles.css"
 # - "{{site.baseurl}}/static/css/ANOTHER-CSS-COMPONENTS.css"
 # custom_js:
 # - "{{site.baseurl}}/static/js/YOUR-CSS-COMPONENTS.js"
