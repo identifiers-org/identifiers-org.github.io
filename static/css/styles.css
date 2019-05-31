@@ -1,0 +1,90 @@
+/* blackbar extended fix */
+.masthead-black-bar .row {
+  max-width: none !important;
+}
+
+/* Logo styles */
+.logo-box {
+  display: flex;
+  margin: 0 0 .5rem 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.logo-box img {
+  max-width: 100% !important;
+  width: auto;
+  height: auto;
+}
+
+.logo-text {
+  color: inherit;
+  margin-left: 1rem !important;
+}
+
+.logo-text h1 {
+  font-size: 2.5rem !important;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: right;
+  margin: -1rem 1.5rem 0 0;
+  font-style: italic;
+}
+
+/* Navbar fixes */
+#local-nav {
+  width: 100%;
+}
+
+
+/* Navbar active */
+.navbar-active {
+  color: #292929 !important;
+  font-weight: bold !important;
+}
+
+/* Elixir banner */
+.elixir-banner {
+  background-color: #eaeaea;
+  padding: .5rem;
+  max-width: 80rem;
+  margin: 5rem auto .5rem auto;
+}
+
+.elixir-banner__logo {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.elixir-banner__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.elixir-banner__text p {
+  margin-bottom: 0px;
+}
+
+.elixir-banner__text a {
+  color: #0086b4 !important;
+  border-bottom: none !important;
+}
+
+
+/* Main styles */
+.blurb {
+  margin-top: 3rem;
+}
+
+.blurb h2 {
+  color: #222 !important;
+}

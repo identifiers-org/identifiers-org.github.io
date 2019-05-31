@@ -1,0 +1,63 @@
+<div class="elixir-banner">
+  <div class="elixir-banner__logo">
+    <img src="{{ site.baseurl }}/static/elixir_kitemark-60px.png" />
+  </div>
+  <div class="elixir-banner__text">
+    <span>This service</span> is part of the ELIXIR infrastructure
+
+    <p class="">
+      <small>
+        <span>Identifiers.org is an ELIXIR Interoperability Platform resource </span>
+        <a href="https://elixir-europe.org/platforms/interoperability" target="_blank" class="text-primary">Learn more</a>
+      </small>
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div id="global-footer" class="global-footer">
+    <nav id="global-nav-expanded" class="global-nav-expanded row">
+      <!-- Footer will be automatically inserted by footer.js -->
+    </nav>
+    <section id="ebi-footer-meta" class="ebi-footer-meta row">
+      <!-- Footer meta will be automatically inserted by footer.js -->
+    </section>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<!--
+<script>window.jQuery || document.write('<script src="../js/libs/jquery-1.10.2.min.js"><\/script>')</script>
+-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Your custom JavaScript file scan go here... change names accordingly -->
+<script defer="defer" src="//ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/script.js"></script>
+
+<!-- The Foundation theme JavaScript -->
+<script src="//ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/libraries/foundation-6/js/foundation.js"></script>
+<script src="//ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/js/foundationExtendEBI.js"></script>
+<script type="text/JavaScript">$(document).foundation();</script>
+<script type="text/JavaScript">$(document).foundationExtendEBI();</script>
+
+{% comment %} Custom global JS could go here: {% endcomment %}
+{% for js in site.custom_js %}
+<script src="{{js}}"></script>
+{% endfor %}
+
+{% comment %} Custom Component Scripts (from individual .md files) go here: {% endcomment %}
+{% for js in page.javascript %}
+<script src="{{js}}"></script>
+{% endfor %}
+
+<!-- Google Analytics details... -->
+<!-- Change UA-XXXXX-X to be your site's ID -->
+<!--
+<script>
+  window._gaq = [['_setAccount','{{site.ga_code}}'],['_trackPageview'],['_trackPageLoadTime']];
+  Modernizr.load({
+    load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+  });
+</script>
+-->

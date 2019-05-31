@@ -1,0 +1,32 @@
+# Site settings
+title: Identifiers.org
+group: Identifiers.org
+email: mbernal@ebi.ac.uk
+domain: //identifiers-org.github.io
+baseurl: /docs
+permalink: docs
+
+# Add custom CSS / JS here
+custom_css:
+  - "/docs/static/css/styles.css"
+# - "{{site.baseurl}}/static/css/ANOTHER-CSS-COMPONENTS.css"
+# custom_js:
+# - "{{site.baseurl}}/static/js/YOUR-CSS-COMPONENTS.js"
+# - "{{site.baseurl}}/static/js/ANOTHER-CSS-COMPONENTS.js"
+# ga_code: 'UA-XXXXX-X'
+
+# root repo for this project
+repo:        "https://github.com/identifiers-org/identifiers-org.github.io"
+source:      .
+destination: ./_site
+exclude:     [node_modules, .sass-cache, gulpfile.js, package.json, HOWTO.md, docker-compose.yml, .gitlab-ci.yml]
+#plugins:     ./_plugins
+future:      false
+lsi:         false
+markdown:    kramdown
+highlighter: rouge
+
+# Allow redirects
+# https://help.github.com/articles/redirects-on-github-pages/
+plugins:
+#  - jekyll-redirect-from
