@@ -3,7 +3,7 @@ title: Identifiers.org
 group: Identifiers.org
 email: mbernal@ebi.ac.uk
 domain: //identifiers-org.github.io
-baseurl: /docs
+baseurl: /
 permalink: docs
 
 # Add custom CSS / JS here
