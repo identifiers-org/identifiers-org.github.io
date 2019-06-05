@@ -1,12 +1,60 @@
-  <div id="skip-to">
-    <ul>
-      <li><a href="#content">Skip to main content</a></li>
-      <li><a href="#local-nav">Skip to local navigation</a></li>
-      <li><a href="#global-nav">Skip to EBI global navigation menu</a></li>
-      <li><a href="#global-nav-expanded">Skip to expanded EBI global navigation menu (includes all sub-sections)</a></li>
-    </ul>
+<div data-sticky-container>
+  <div id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="main-content-area:top" data-btm-anchor="main-content-area:bottom">
+    <div class="masthead-inner row expanded">
+      <div class="columns medium-7" id="local-title">
+        <div class="logo-box">
+          <img src="/static/identifiers_logo.png" />
+          <div class="logo-text">
+            <h1>Identifiers.org</h1>
+            <p class="logo-subtitle">Documentation</p>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul id="local-nav" class="dropdown menu float-left" data-description="navigational" data-dropdown-menu>
+          <li>
+            <a href="https://identifiers.org">
+              <i class="icon icon-common icon-external-link-alt"></i> Resolution
+            </a>
+          </li>
+
+          <li>
+            <a href="https://registry.identifiers.org">
+              <i class="icon icon-common icon-list"></i> Registry
+            </a>
+          </li>
+
+          <li>
+            <a href="https://registry.identifiers.org/registry">
+              <i class="icon icon-common icon-search"></i> Browse the registry
+            </a>
+          </li>
+
+          <li>
+            <a href="https://registry.identifiers.org/prefixregistrationrequest">
+              <i class="icon icon-common icon-hand-point-up"></i> Request prefix
+            </a>
+          </li>
+
+          <li class="active">
+            <a class="navbar-active" href="{{site.domain}}">
+              <i class="icon icon-common icon-documentation active"></i> Documentation
+            </a>
+          </li>
+
+          <li>
+            <a href="http://ebi.identifiers.org" target="_blank">
+              <i class="icon icon-common icon-home"></i> Legacy platform
+            </a>
+          </li>
+
+          <li class="float-right">
+            <a href="https://github.com/identifiers-org/identifiers-org.github.io/issues/new" target="_blank" class="nav-link nav-link-dark">
+              <i class="icon icon-common icon-comments"></i> Feedback
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
-
-  <header id="masthead-black-bar" class="clearfix masthead-black-bar expanded">
-  </header>
-
+</div>
