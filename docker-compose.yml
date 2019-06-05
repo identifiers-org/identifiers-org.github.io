@@ -1,6 +1,8 @@
 jekyll:
     image: jekyll/builder:pages
     command: jekyll serve --watch --incremental
+    environment:
+        - PAGES_REPO_NWO=identifiers-org/identifiers-org.github.io
     ports:
         - 4000:4000
     volumes:
