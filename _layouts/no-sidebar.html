@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body class="level2">
+    {% include global_masthead.html %}
+    <div id="content" role="main">
+      {% include local_masthead.html %}
+
+      <section class="row mt-3" id="main-content-area">
+        <div class="medium-12 columns">
+        {{ content }}
+        </div>
+      </section>
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

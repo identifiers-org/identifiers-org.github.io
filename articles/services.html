@@ -1,9 +1,110 @@
 ---
-layout: default
+layout: no-sidebar
 title: Web services
 ---
 
 <div class="blurb">
-	<h2><i class="icon icon-common icon-globe mw-5"></i>Web services</h2>
-	<p>lorem</p>
+	<h2><i class="icon icon-common icon-globe mr-2"></i>Web services</h2>
+	<p>
+		The web service infrastructure is divided in two sites: <a href="#resolver">Resolution Service</a> and
+		<a href="#registry">Central Registry</a>.
+	</p>
+
+
+	<h3 id="resolver" class="mt-3">Resolution Service</h3>
+	<p>
+		The Resolution Service is the main function in Identifiers.org. It takes a Compact Identifier and resolves
+		it to a URL. There are two different ways to utilize it:
+	</p>
+
+	<ul>
+		<li>
+			Issuing a Compact Identifier to resolve into the address as a parameter, eg:
+			<code class="code-inline">https://identifiers.org/taxonomy:9606</code>
+		</li>
+		<li>
+			Using the Web service search bar in the <a href="https://cloud.identifiers.org">home page</a>. With
+			this method, you can access advances features, like Compact Identifier validation, getting a list of
+			providers, and finding more information about a resource.
+		</li>
+	</ul>
+
+	<p>
+		The following section details the user interface in the Identifers.org web service.
+	</p>
+
+
+	<h5 class="mt-3"><i class="icon icon-common icon-search mw-2"></i>Advanced search</h5>
+	<p>
+		All the features of the old advanced search have been merged into the main Identifiers.org search
+		bar at the <a href="https://cloud.identifiers.org" target="_blank">resolver homepage</a>. As you
+		can see in the usage example below, the old <a
+			href="https://ebi.identifiers.org/search/" target="_blank"
+		>	Retrieval Service</a> and <a href="https://ebi.identifiers.org/search/">Validation Service</a>
+		are	now performed as you write,	and you get insights about the Compact Identifier in real time.
+	</p>
+
+	<div class="mt-2">
+		<video autoplay loop class="border video-center">
+			<source src="/static/vids/resolver-advanced_search.webm" type="video/webm">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+
+
+	<h3 id="registry" class="mt-5">Central Registry</h3>
+
+	<p>
+		The Central Registry provides the necessary information to allow users to generate unique,
+		persistent and unambiguous identifiers for scientific data. Selecting a namespace will take
+		you to a detailed view of all the information related to it, including its maintainer and
+		different providers.
+	</p>
+
+
+	<h4 class="mt-2">Registry services</h4>
+
+	<h5><i class="icon icon-common icon-search mw-2"></i>Registry search</h5>
+	<p>
+		The <a href="https://registry.identifiers.org/">Registry</a> search bar features the same prediction
+		and hints-as-you-type as the Resolver.
+	</p>
+
+
+	<div class="mt-2">
+		<video autoplay loop class="border video-center">
+			<source src="/static/vids/registry-search.webm" type="video/webm">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+
+
+	<h5 class="mt-3"><i class="icon icon-common icon-cloud-download-alt mw-2"></i>Registry browser</h5>
+	<span>
+		<a href="https://registry.identifiers.org/registry">Browsing the registry</a> allows the user to
+		explore all the entries in the registry in a single view.
+	</span>
+
+	<div class="mt-2">
+		<video autoplay loop class="border video-center">
+			<source src="/static/vids/registry-browser.webm" type="video/webm">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+
+
+	<h5 class="mt-2"><i class="icon icon-common icon-cloud-download-alt mw-2"></i>Download registry</h5>
+	<span>
+		A complete copy of the registry can be downloaded using the <a href="/articles/api.html">API
+		service</a>.
+	</span>
+
+	<h5 class="mt-2"><i class="icon icon-common icon-list mw-2"></i>Requesting a prefix in Identifiers.org</h5>
+	If you are a resource maintainer interested in registering a prefix in Identifiers.org, use the
+	<a href="https://registry.identifiers.org/prefixregistrationrequest">Prefix request form</a>.
+
+	<!-- <div class="spacer-2"></div>
+	<h5><i class="icon icon-common icon-share-alt mw-2"></i>SPARQL endpoint</h5>
+	TODO -->
+
 </div>

@@ -1,9 +1,562 @@
 ---
-layout: default
+layout: no-sidebar
 title: Api documentation
 ---
 
 <div class="blurb">
-	<h2><i class="icon icon-common icon-code mw-5"></i>API documentation</h2>
-	<p>lorem</p>
+	<h2><i class="icon icon-common icon-code mr-2"></i>API documentation</h2>
+
+	<p>
+		The API service infrastructure is divided in two endpoints: <a href="#resolver">resolver API</a> and
+		<a href="#registry">registry API</a>.
+	</p>
+
+
+	<h3 id="resolver" class="mt-3">Resolver API</h3>
+	<p>
+		The Identifiers.org resolver API is located at: <code class="code-inline">
+			https://resolver.api.identifiers.org</code>. It provides the resolution endpoint.
+	</p>
+
+	<h4 class="mt-2">Resolver API services</h4>
+	<h5>
+		<i class="icon icon-common icon-external-link-alt mw-2"></i>Compact Identifier resolution
+	</h5>
+
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://resolver.api.identifiers.org/{COMPACT_ID}</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Resolves a Compact Identifier and returns a list of resolved resources, sorted by its recommended usage index.
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span><a href="https://resolver.api.identifiers.org/taxonomy:9606" target="_blank">https://resolver.api.identifiers.org/taxonomy:9606</a></span>
+		</li>
+	</ul>
+
+
+
+
+	<h3 id="registry" class="mt-5">Registry API</h3>
+	<p>
+		The Identifiers.org registry API is located at: <code class="code-inline">
+		https://registry.api.identifiers.org</code>. It provides a RESTful API which allows users to
+		navigate the whole registry using the <a href="https://restfulapi.net/hateoas/" target="_blank">
+		HATEOAS standard</a>. Outside of the REST API, a series of endpoints are provided for special
+		actions, like requesting the registration of a prefix, or downloading the whole dataset. Details
+		are provided below.
+	</p>
+
+	<h4 class="mt-2">Registry API services</h4>
+	<ul>
+		<li><a href="#namespaces"></i>Namespaces</a></li>
+		<li><a href="#resources"></i>Resources</a></li>
+		<li><a href="#institutions"></i>Institutions</a></li>
+		<li><a href="#locations"></i>Locations</a></li>
+		<li><a href="#getdataset">Resolver dataset</a></li>
+	</ul>
+
+
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- NAMESPACES -->
+	<h5 class="mt-3">
+		<i id="namespaces" class="icon icon-common icon-leaf mw-2"></i>Namespaces
+	</h5>
+
+	<!-- BROWSE NAMESPACES -->
+	<h6>
+		Browse namespaces
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a portion of the namespace list in the registry.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/namespaces?sort=name,asc" target="_blank">
+					https://registry.api.identifiers.org/restApi/namespaces?sort=name,asc
+				</a>
+				Gets the first 20-element page of the namespace list, sorted by name.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND NAMESPACES BY PREFIX -->
+	<h6 class="mt-2">
+		Find namespace by prefix
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefix</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns one namespace from the registry with a given prefix.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">prefix</code><strong> Required</strong> Specifies the exact string to search.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefix?prefix=taxonomy" target="_blank">
+					https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefix?prefix=taxonomy
+				</a>
+				Finds a namespace with the prefix 'taxonomy'.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND NAMESPACES BY PREFIX STARTS WITH -->
+	<h6 class="mt-2">
+		Find namespace by prefix starting with
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixStartsWith</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all namespaces in the registry which prefix start with a given string.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">prefixStart</code><strong> Required</strong> Specifies the starting string.</li>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixStartsWith?prefixStart=tax" target="_blank">
+					https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixStartsWith?prefixStart=tax
+				</a>
+				Finds all namespaces with a prefix starting with 'tax'.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND NAMESPACES BY PREFIX CONTAINS -->
+	<h6 class="mt-2">
+		Find namespace by prefix containing
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all namespaces in the registry which prefix contains a given string.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">content</code><strong> Required</strong> Specifies the containing string.</li>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining?content=onomy" target="_blank">
+					https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining?content=onomy
+				</a>
+				Finds all namespaces with a prefix containing the string 'onomy'.
+			</span>
+		</li>
+	</ul>
+
+
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- RESOURCES -->
+	<h5 class="mt-3">
+		<i id="resources" class="icon icon-common icon-cubes mw-2"></i>Resources
+	</h5>
+
+	<!-- BROWSE RESOURCES -->
+	<h6>
+		Browse resources
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/resources</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a portion of the resources list in the registry.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/resources?page=8&size=10" target="_blank">
+					https://registry.api.identifiers.org/restApi/resources?page=8&size=10
+				</a>
+				Gets the eighth 10-element page of the resources list.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND RESOURCES BY PROVIDER CODE -->
+	<h6 class="mt-2">
+		Find resources by provider code
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all resources in the registry with a given provider code.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">providerCode</code><strong> Required</strong> Specifies the provider code.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/resources/search/findByProviderCode?providerCode=ols" target="_blank">
+					https://registry.api.identifiers.org/restApi/resources/search/findByProviderCode?providerCode=ols
+				</a>
+				Finds all resources with provider code 'ols'.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND RESOURCES BY NAMESPACE ID -->
+	<h6 class="mt-2">
+		Find resources by namespace id
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all namespaces in the registry which are related to a given namespace ID.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">id</code><strong> Required</strong> Specifies the namespace ID.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/resources/search/findAllByNamespaceId?id=28" target="_blank">
+					https://registry.api.identifiers.org/restApi/resources/search/findAllByNamespaceId?id=28
+				</a>
+				Finds all resources with namespace ID 28 (taxonomy).
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND RESOURCES BY NAMESPACE ID AND PROVIDER CODE -->
+	<h6 class="mt-2">
+		Find resources by namespace id and provider code
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/resources/search/findByNamespaceIdAndProviderCode</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all namespaces in the registry which are related to a given namespace ID and a provider code.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">id</code><strong> Required</strong> Specifies the namespace ID.</li>
+				<li><code class="code-inline">providerCode</code><strong> Required</strong> Specifies the provider code.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/resources/search/findByNamespaceIdAndProviderCode?namespaceId=28&providerCode=ols" target="_blank">https://registry.api.identifiers.org/restApi/resources/search/findByNamespaceIdAndProviderCode?namespaceId=28&providerCode=ols</a>
+				Finds all resources with namespace ID 28 (taxonomy) and provider code 'ols'.
+			</span>
+		</li>
+	</ul>
+
+
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- INSTITUTIONS -->
+	<h5 class="mt-3">
+		<i id="institutions" class="icon icon-common icon-sitemap mw-2"></i>Institutions
+	</h5>
+
+	<h6>
+		Browse institutions
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a portion of the institutions list in the registry.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/namespaces?size=1000" target="_blank">
+					https://registry.api.identifiers.org/restApi/namespaces?size=1000
+				</a>
+				Gets at most 1000 institutions from the registry. This is a hard limit, and it is still recommended to paginate and
+				launch multiple smaller requests.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND INSTITUTIONS BY NAME -->
+	<h6 class="mt-2">
+		Find institutions by name
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByName</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns all institutions with the given name from the registry.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">name</code><strong> Required</strong> Specifies the exact name to find.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/institutions/search/findByName?name=EBI" target="_blank">
+					https://registry.api.identifiers.org/restApi/institutions/search/findByName?name=EBI
+				</a>
+				Finds all institutions with name 'EBI'.
+			</span>
+		</li>
+	</ul>
+
+		<!-- FIND INSTITUTIONS BY NAME CONTAINING -->
+		<h6 class="mt-2">
+			Find institutions by name containing
+		</h6>
+		<ul class="list-none">
+			<li>
+				<strong>Endpoint:</strong>
+				<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByNameContaining</code>
+			</li>
+			<li>
+				<strong>Description:</strong>
+				<span>Returns all institutions which name contains a given string.
+			</li>
+			<li>
+				<strong>Parameters:</strong>
+				<ul>
+					<li><code class="code-inline">name</code><strong> Required</strong> Specifies the string the name must contain.</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Example:</strong>
+				<span>
+					<a href="https://registry.api.identifiers.org/restApi/institutions/search/findByNameContaining?nameContent=EMBL" target="_blank">
+						https://registry.api.identifiers.org/restApi/institutions/search/findByNameContaining?nameContent=EMBL
+					</a>
+					Finds all institutions with name containing 'EMBL'.
+				</span>
+			</li>
+		</ul>
+
+		<!-- FIND INSTITUTIONS BY LOCATION COUNTRY CODE -->
+		<h6 class="mt-2">
+			Find institutions by location country code
+		</h6>
+		<ul class="list-none">
+			<li>
+				<strong>Endpoint:</strong>
+				<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByLocationCountryCode</code>
+			</li>
+			<li>
+				<strong>Description:</strong>
+				<span>Returns all institutions which location has a given country code.
+			</li>
+			<li>
+				<strong>Parameters:</strong>
+				<ul>
+					<li><code class="code-inline">countryCode</code><strong> Required</strong> Specifies the country code for the institution's location.</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Example:</strong>
+				<span>
+					<a href="https://registry.api.identifiers.org/restApi/institutions/search/findByLocationCountryCode?countryCode=GB" target="_blank">
+						https://registry.api.identifiers.org/restApi/institutions/search/findByLocationCountryCode?countryCode=GB
+					</a>
+					Finds all institutions based in Great Britain.
+				</span>
+			</li>
+		</ul>
+
+
+
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- LOCATIONS -->
+	<h5 class="mt-3">
+		<i id="locations" class="icon icon-common icon-globe mw-2"></i>Locations
+	</h5>
+
+	<h6>
+		Browse locations
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/locations</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a portion of the locations list in the registry.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">page</code> Specifies the page number requested.</li>
+				<li><code class="code-inline">size</code> Specifies the number of elements per page.</li>
+				<li><code class="code-inline">sort</code> Sorting parameter in the form field,order (eg: name,asc).</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/locations?sort=countryName,asc" target="_blank">
+					https://registry.api.identifiers.org/restApi/locations?sort=countryName,asc
+				</a>
+				Gets the first 20-element page of locations, sorted by ascending country name.
+			</span>
+		</li>
+	</ul>
+
+	<!-- FIND LOCATIONS BY COUNTRY CODE -->
+	<h6 class="mt-2">
+		Find locations by country code
+	</h6>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/restApi/locations/search/findByCountryCode</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a location with a given country code. Country codes adhere to the <a
+				href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166 Country Codes Standard</a>.
+		</li>
+		<li>
+			<strong>Parameters:</strong>
+			<ul>
+				<li><code class="code-inline">countryCode</code><strong> Required</strong> Specifies the exact country code to find.</li>
+			</ul>
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/restApi/locations/search/findByCountryCode?countryCode=GB" target="_blank">
+					https://registry.api.identifiers.org/restApi/locations/search/findByCountryCode?countryCode=GB
+				</a>
+				Finds the location with country code 'GB' (Great Britain).
+			</span>
+		</li>
+	</ul>
+
+
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- GETRESOLVERDATASET -->
+	<h5 class="mt-3">
+		<i id="getdataset" class="icon icon-common icon-cloud-download-alt mw-2"></i>Resolver dataset
+	</h5>
+
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/resolutionApi/getResolverDataset</code>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Returns a copy of the whole registry.
+		</li>
+		<li>
+			<strong>Example:</strong>
+			<span>
+				<a href="https://registry.api.identifiers.org/resolutionApi/getResolverDataset" target="_blank">
+					https://registry.api.identifiers.org/resolutionApi/getResolverDataset
+				</a>
+			</span>
+		</li>
+	</ul>
+
+
 </div>
