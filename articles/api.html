@@ -52,12 +52,42 @@ title: Api documentation
 	</p>
 
 	<h4 class="mt-2">Registry API services</h4>
+
+	<h5>Collections</h5>
 	<ul>
 		<li><a href="#namespaces"></i>Namespaces</a></li>
 		<li><a href="#resources"></i>Resources</a></li>
 		<li><a href="#institutions"></i>Institutions</a></li>
 		<li><a href="#locations"></i>Locations</a></li>
+	</ul>
+
+	<h5>Mass retrieval</h5>
+	<ul>
 		<li><a href="#getdataset">Resolver dataset</a></li>
+	</ul>
+
+	<h5>Prefix registration request</h5>
+	<ul>
+		<li><a href="#prefixrequest">Prefix request</a></li>
+		<li><a href="#validatename">Validate resource name</a></li>
+		<li><a href="#validatedescription">Validate resource description</a></li>
+		<li><a href="#validatereferences">Validate resource references</a></li>
+		<li><a href="#validateadditionainformation">Validate resource additional information</a></li>
+		<li><a href="#validatesampleid">Validate resource Sample ID</a></li>
+		<li><a href="#validateregexpattern">Validate resource Regex pattern</a></li>
+		<li><a href="#validateinstitutionname">Validate institution name</a></li>
+		<li><a href="#validateinstitutiondescription">Validate institution description</a></li>
+		<li><a href="#validateinstitutionhomeurl">Validate institution home URL</a></li>
+		<li><a href="#validateinstitutionlocation">Validate institution location</a></li>
+		<li><a href="#validateprovidername">Validate institution provider name</a></li>
+		<li><a href="#validateproviderdescription">Validate provider description</a></li>
+		<li><a href="#validateproviderlocation">Validate provider location</a></li>
+		<li><a href="#validateprovidercode">Validate provider code</a></li>
+		<li><a href="#validateproviderhomeurl">Validate provider home URL</a></li>
+		<li><a href="#validateproviderurlpattern">Validate provider URL pattern</a></li>
+		<li><a href="#validaterequester">Validate requester</a></li>
+		<li><a href="#validaterequesteremail">Validate requester's email</a></li>
+		<li><a href="#validaterequestername">Validate requester's name</a></li>
 	</ul>
 
 
@@ -65,22 +95,26 @@ title: Api documentation
 
 	<!-- ----------------------------------------------------------------------------------------------------------------- -->
 	<!-- NAMESPACES -->
-	<h5 class="mt-3">
-		<i id="namespaces" class="icon icon-common icon-leaf mw-2"></i>Namespaces
-	</h5>
+	<h4 id="namespaces" class="mt-3">
+		<i class="icon icon-common icon-leaf mw-2"></i>Namespaces
+	</h4>
 
 	<!-- BROWSE NAMESPACES -->
-	<h6>
+	<h5>
 		Browse namespaces
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a portion of the namespace list in the registry.
+			<span>Returns a portion of the namespace list in the registry.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -101,18 +135,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND NAMESPACES BY PREFIX -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find namespace by prefix
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefix</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns one namespace from the registry with a given prefix.
+			<span>Returns one namespace from the registry with a given prefix.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -131,18 +170,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND NAMESPACES BY PREFIX STARTS WITH -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find namespace by prefix starting with
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixStartsWith</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns all namespaces in the registry which prefix start with a given string.
+			<span>Returns all namespaces in the registry which prefix start with a given string.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -164,18 +208,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND NAMESPACES BY PREFIX CONTAINS -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find namespace by prefix containing
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns all namespaces in the registry which prefix contains a given string.
+			<span>Returns all namespaces in the registry which prefix contains a given string.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -202,22 +251,26 @@ title: Api documentation
 
 	<!-- ----------------------------------------------------------------------------------------------------------------- -->
 	<!-- RESOURCES -->
-	<h5 class="mt-3">
-		<i id="resources" class="icon icon-common icon-cubes mw-2"></i>Resources
-	</h5>
+	<h4 id="resources" class="mt-3">
+		<i class="icon icon-common icon-cubes mw-2"></i>Resources
+	</h4>
 
 	<!-- BROWSE RESOURCES -->
-	<h6>
+	<h5>
 		Browse resources
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/resources</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a portion of the resources list in the registry.
+			<span>Returns a portion of the resources list in the registry.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -238,18 +291,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND RESOURCES BY PROVIDER CODE -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find resources by provider code
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/namespaces/search/findByPrefixContaining</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns all resources in the registry with a given provider code.
+			<span>Returns all resources in the registry with a given provider code.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -268,10 +326,11 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND RESOURCES BY NAMESPACE ID -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find resources by namespace id
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
@@ -279,7 +338,7 @@ title: Api documentation
 		</li>
 		<li>
 			<strong>Description:</strong>
-			<span>Returns all namespaces in the registry which are related to a given namespace ID.
+			<span>Returns all namespaces in the registry which are related to a given namespace ID.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -298,18 +357,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND RESOURCES BY NAMESPACE ID AND PROVIDER CODE -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find resources by namespace id and provider code
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/resources/search/findByNamespaceIdAndProviderCode</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns all namespaces in the registry which are related to a given namespace ID and a provider code.
+			<span>Returns all namespaces in the registry which are related to a given namespace ID and a provider code.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -332,21 +396,25 @@ title: Api documentation
 
 	<!-- ----------------------------------------------------------------------------------------------------------------- -->
 	<!-- INSTITUTIONS -->
-	<h5 class="mt-3">
-		<i id="institutions" class="icon icon-common icon-sitemap mw-2"></i>Institutions
-	</h5>
+	<h4 id="institutions" class="mt-3">
+		<i class="icon icon-common icon-sitemap mw-2"></i>Institutions
+	</h4>
 
-	<h6>
+	<h5>
 		Browse institutions
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a portion of the institutions list in the registry.
+			<span>Returns a portion of the institutions list in the registry.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -368,18 +436,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND INSTITUTIONS BY NAME -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find institutions by name
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByName</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns all institutions with the given name from the registry.
+			<span>Returns all institutions with the given name from the registry.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -398,18 +471,23 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 		<!-- FIND INSTITUTIONS BY NAME CONTAINING -->
-		<h6 class="mt-2">
+		<h5 class="mt-2">
 			Find institutions by name containing
-		</h6>
+		</h5>
 		<ul class="list-none">
 			<li>
 				<strong>Endpoint:</strong>
 				<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByNameContaining</code>
 			</li>
 			<li>
+				<strong>Method:</strong>
+				<span>GET</span>
+			</li>
+			<li>
 				<strong>Description:</strong>
-				<span>Returns all institutions which name contains a given string.
+				<span>Returns all institutions which name contains a given string.</span>
 			</li>
 			<li>
 				<strong>Parameters:</strong>
@@ -428,18 +506,23 @@ title: Api documentation
 			</li>
 		</ul>
 
+
 		<!-- FIND INSTITUTIONS BY LOCATION COUNTRY CODE -->
-		<h6 class="mt-2">
+		<h5 class="mt-2">
 			Find institutions by location country code
-		</h6>
+		</h5>
 		<ul class="list-none">
 			<li>
 				<strong>Endpoint:</strong>
 				<code class="code-inline">https://registry.api.identifiers.org/restApi/institutions/search/findByLocationCountryCode</code>
 			</li>
 			<li>
+				<strong>Method:</strong>
+				<span>GET</span>
+			</li>
+			<li>
 				<strong>Description:</strong>
-				<span>Returns all institutions which location has a given country code.
+				<span>Returns all institutions which location has a given country code.</span>
 			</li>
 			<li>
 				<strong>Parameters:</strong>
@@ -464,21 +547,25 @@ title: Api documentation
 
 	<!-- ----------------------------------------------------------------------------------------------------------------- -->
 	<!-- LOCATIONS -->
-	<h5 class="mt-3">
-		<i id="locations" class="icon icon-common icon-globe mw-2"></i>Locations
-	</h5>
+	<h4 id="locations" class="mt-3">
+		<i class="icon icon-common icon-globe mw-2"></i>Locations
+	</h4>
 
-	<h6>
+	<h5>
 		Browse locations
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/locations</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a portion of the locations list in the registry.
+			<span>Returns a portion of the locations list in the registry.</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -499,19 +586,26 @@ title: Api documentation
 		</li>
 	</ul>
 
+
 	<!-- FIND LOCATIONS BY COUNTRY CODE -->
-	<h6 class="mt-2">
+	<h5 class="mt-2">
 		Find locations by country code
-	</h6>
+	</h5>
 	<ul class="list-none">
 		<li>
 			<strong>Endpoint:</strong>
 			<code class="code-inline">https://registry.api.identifiers.org/restApi/locations/search/findByCountryCode</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a location with a given country code. Country codes adhere to the <a
+			<span>
+				Returns a location with a given country code. Country codes adhere to the <a
 				href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166 Country Codes Standard</a>.
+			</span>
 		</li>
 		<li>
 			<strong>Parameters:</strong>
@@ -535,9 +629,9 @@ title: Api documentation
 
 	<!-- ----------------------------------------------------------------------------------------------------------------- -->
 	<!-- GETRESOLVERDATASET -->
-	<h5 class="mt-3">
-		<i id="getdataset" class="icon icon-common icon-cloud-download-alt mw-2"></i>Resolver dataset
-	</h5>
+	<h4 id="getdataset" class="mt-3">
+		<i class="icon icon-common icon-cloud-download-alt mw-2"></i>Resolver dataset
+	</h4>
 
 	<ul class="list-none">
 		<li>
@@ -545,8 +639,12 @@ title: Api documentation
 			<code class="code-inline">https://registry.api.identifiers.org/resolutionApi/getResolverDataset</code>
 		</li>
 		<li>
+			<strong>Method:</strong>
+			<span>GET</span>
+		</li>
+		<li>
 			<strong>Description:</strong>
-			<span>Returns a copy of the whole registry.
+			<span>Returns a copy of the whole registry.</span>
 		</li>
 		<li>
 			<strong>Example:</strong>
@@ -559,4 +657,1088 @@ title: Api documentation
 	</ul>
 
 
+
+
+	<!-- ----------------------------------------------------------------------------------------------------------------- -->
+	<!-- PREFIXREQUEST -->
+	<h4 id="prefixrequest" class="mt-3">
+		<i class="icon icon-common icon-tasks mw-2"></i>Prefix request
+	</h4>
+
+	<!-- SUBMIT PREFIX REGISTRATION REQUEST -->
+	<h5>
+		Submit prefix registration request
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/registerPrefix</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Submits a Prefix registration request.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">"apiVersion"</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">"payload"</span>: {
+		<span class="json-key">"name"</span>: <span class="json-string">"A new resource"</span>,
+		<span class="json-key">"description"</span>: <span class="json-string">"A description with more than 50 characters for the new resource!"</span>,
+		<span class="json-key">"requestedPrefix"</span>: <span class="json-string">"newres"</span>,
+		<span class="json-key">"sampleId"</span>: <span class="json-string">"200"</span>,
+		<span class="json-key">"idRegexPattern"</span>: <span class="json-string">"[0-9]{3}"</span>,
+		<span class="json-key">"references"</span>: [
+			<span class="json-string">"Reference 1"</span>,
+			<span class="json-string">"Reference 2"</span>
+		],
+		<span class="json-key">"additionalInformation"</span>: <span class="json-string">"Additional information for our new resource."</span>,
+		<span class="json-key">"institutionName"</span>: <span class="json-string">"New Resources inc."</span>,
+		<span class="json-key">"institutionHomeUrl"</span>: <span class="json-string">"xhttps://www.example.com"</span>,
+		<span class="json-key">"institutionDescription"</span>: <span class="json-string">"A description with more than 50 characters for the institution."</span>,
+		<span class="json-key">"institutionLocation"</span>: <span class="json-string">"GB"</span>,
+		<span class="json-key">"providerName"</span>: <span class="json-string">"New Resources inc."</span>,
+		<span class="json-key">"providerCode"</span>: <span class="json-string">"nri"</span>,
+		<span class="json-key">"providerDescription"</span>: <span class="json-string">"A description with more than 50 characters for the institution."</span>,
+		<span class="json-key">"providerHomeUrl"</span>: <span class="json-string">"https://www.example.com"</span>,
+		<span class="json-key">"providerUrlPattern"</span>: <span class="json-string">"http://httpstat.us/{$id}"</span>,
+		<span class="json-key">"providerLocation"</span>: <span class="json-string">"GB"</span>,
+		<span class="json-key">"requester"</span>: {
+			<span class="json-key">"name"</span>: <span class="json-string">"John Doe"</span>,
+			<span class="json-key">"email"</span>: <span class="json-string">"johndoe@example.com"</span>
+		}
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">"apiVersion"</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">"errorMessage"</span>: <span class="json-string">"INVALID Prefix registration request due to ''xhttps://www.example.com' is not a valid URL'"</span>,
+	<span class="json-key">"payload"</span>: {
+		<span class="json-key">"comment"</span>: <span class="json-string">"No comments on your prefix registration request"</span>,
+		<span class="json-key">"token"</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				<p>
+					This request will intentionally fail due to the field <code class="code-inline">institutionHomeUrl:
+					"xhttps://www.example.com"</code> containing a malformed URL.
+				</p>
+				<p>
+					<i class="icon icon-common icon-exclamation-triangle text-warning"></i>
+					Please keep in mind <strong>this is a
+					live endpoint</strong> creating Prefix registration request entries. We would kindly request not to
+					use it to test your application or spam it in any other way.
+				</p>
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+
+	<p class="mt-3">
+		The following endpoints provide the validation services for all of the fields in a Prefix registration request.
+	</p>
+
+
+	<!-- VALIDATE NAME -->
+	<h5 id="validatename" class="mt-2">
+		Validate resource name
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateName</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a resource name.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">name</span>: <span class="json-string">"resource name"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE DESCRIPTION -->
+	<h5 id="validatedescription" class="mt-2">
+		Validate resource description
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateDescription</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a resource description.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">description</span>: <span class="json-string">"Too short"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">"Prefix request description must be longer than 50 characters"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">""VALIDATION FAILED"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE REFERENCES -->
+	<h5 id="validatereferences" class="mt-2">
+		Validate resource references
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateReferences</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates resource references.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">references</span>: [
+			<span class="json-string">"1"</span>,
+			<span class="json-string">"2"</span>
+		]
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+					<p>
+						<i class="icon icon-common icon-info text-primary"></i>
+						References are optional, so this endpoint will always return OK.
+					</p>
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE ADDITIONAL INFORMATION -->
+	<h5 id="validateadditionainformation" class="mt-2">
+		Validate resource additional information
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateAdditionalInformation</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates the additional information field of a resource.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+		<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+		<span class="json-key">payload</span>: {
+			<span class="json-key">additionalInformation</span>: <span class="json-string">"Nope"</span>
+		}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+					<p>
+						<i class="icon icon-common icon-info text-primary"></i>
+						Additional information field is optional, so this endpoint will always return OK.
+					</p>
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE SAMPLE ID -->
+	<h5 id="validatesampleid" class="mt-2">
+		Validate resource Sample ID
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateSampleId</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a Sample ID using a provider URL.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">sampleId</span>: <span class="json-string">"200"</span>
+		<span class="json-key">providerUrlPattern</span>: <span class="json-string">"http://httpstat.us/{$id}"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+					<p>
+						<i class="icon icon-common icon-info text-primary"></i>
+						To validate a Sample ID, the Provide URL pattern where that ID must be substituted must also be provided,
+						and the final URL must point to a working document.
+					</p>
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE REGEX PATTERN -->
+	<h5 id="validateregexpattern" class="mt-2">
+		Validate resource Regex pattern
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateIdRegexPattern</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a Regex pattern against a Sample ID.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">idRegexPattern</span>: <span class="json-string">"[a-z]*"</span>
+		<span class="json-key">sampleId</span>: <span class="json-string">"testpattern"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+					<p>
+						<i class="icon icon-common icon-info text-primary"></i>
+						To validate a Regex pattern, the Sample ID must also be provided, so the Regex can be tested
+						against it.
+					</p>
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE INSTITUTION NAME -->
+	<h5 id="validateinstitutionname" class="mt-2">
+		Validate institution name
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateInstitutionName</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a institution name.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">institutionName</span>: <span class="json-string">"ebi"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE INSTITUTION DESCRIPTION -->
+	<h5 id="validateinstitutiondescription" class="mt-2">
+		Validate institution description
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateInstitutionDescription</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a institution description.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">institutionDescription</span>: <span class="json-string">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE INSTITUTION HOME URL -->
+	<h5 id="validateinstitutionhomeurl" class="mt-2">
+		Validate institution home URL
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateInstitutionHomeUrl</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a institution home URL.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">institutionHomeUrl</span>: <span class="json-string">"http://www.example.com"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE INSTITUTION LOCATION -->
+	<h5 id="validateinstitutionlocation" class="mt-2">
+		Validate institution location
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateInstitutionLocation</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a institution location. Locations follow the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166 Country Codes Standard</a>.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">institutionLocation</span>: <span class="json-string">"GB"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER NAME -->
+	<h5 id="validateprovidername" class="mt-2">
+		Validate institution provider name
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderName</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a provider name.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerName</span>: <span class="json-string">"EMBL-EBI"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER DESCRIPTION -->
+	<h5 id="validateproviderdescription" class="mt-2">
+		Validate provider description
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderDescription</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a provider description.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerCode</span>: <span class="json-string">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER LOCATION -->
+	<h5 id="validateproviderlocation" class="mt-2">
+		Validate provider location
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderLocation</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a provider location. Locations follow the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166 Country Codes Standard</a>.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerLocation</span>: <span class="json-string">"GB"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER CODE -->
+	<h5 id="validateprovidercode" class="mt-2">
+		Validate provider code
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderCode</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a provider code.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerCode</span>: <span class="json-string">"ebi"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER HOME URL -->
+	<h5 id="validateproviderhomeurl" class="mt-2">
+		Validate provider home URL
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderHomeUrl</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>Validates a provider home URL.</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerHomeUrl</span>: <span class="json-string">"http://www.example.com"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE PROVIDER URL PATTERN -->
+	<h5 id="validateproviderurlpattern" class="mt-2">
+		Validate provider URL pattern
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateProviderHomeUrl</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>
+				Validates a provider home URL. A URL pattern where the LUI of the Compact Identifier will be substituted, using
+				the tag <code class="code-inline">{$id}</code>. An example is provided below.
+			</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">providerUrlPattern</span>: <span class="json-string">"http://www.example.com/{$id}"</span>
+	}
+}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE REQUESTER -->
+	<h5 id="validaterequester" class="mt-2">
+		Validate requester
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateRequester</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>
+				Validates a Prefix registration request requester's information.
+			</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">requester</span>: {
+			<span class="json-key">name</span>: <span class="json-string">"John Doe"</span>,
+			<span class="json-key">email</span>: <span class="json-string">"johndoe@example.com"</span>
+		}
+	}
+ }</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE REQUESTER EMAIL -->
+	<h5 id="validaterequesteremail" class="mt-2">
+		Validate requester's email
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateRequesterEmail</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>
+				Validates a Prefix registration request requester's email.
+			</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">requester</span>: {
+			<span class="json-key">email</span>: <span class="json-string">"johndoe@example.com"</span>,
+		}
+	}
+	}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+		<span class="json-key">token</span>: <span class="json-string">""</span>
+	}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
+
+
+	<!-- VALIDATE REQUESTER NAME -->
+	<h5 id="validaterequestername" class="mt-2">
+		Validate requester's name
+	</h5>
+	<ul class="list-none">
+		<li>
+			<strong>Endpoint:</strong>
+			<code class="code-inline">https://registry.api.identifiers.org/prefixRegistrationApi/validateRequesterName</code>
+		</li>
+		<li>
+			<strong>Method:</strong>
+			<span>POST</span>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<span>
+				Validates a Prefix registration request requester's name.
+			</span>
+		</li>
+		<li>
+			<strong>Body example:</strong>
+			<div class="api-body-example">
+
+<pre class="code">{
+	<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+	<span class="json-key">payload</span>: {
+		<span class="json-key">requester</span>: {
+			<span class="json-key">name</span>: <span class="json-string">"John Doe"</span>,
+		}
+	}
+	}</pre>
+
+			</div>
+		</li>
+		<li>
+			<strong>Output:</strong>
+			<span>
+				<div class="api-body-example mb-1">
+
+<pre class="code">{
+		<span class="json-key">apiVersion</span>: <span class="json-string">"1.0"</span>,
+		<span class="json-key">errorMessage</span>: <span class="json-value">null</span>,
+		<span class="json-key">payload</span>: {
+			<span class="json-key">comment</span>: <span class="json-string">"VALIDATION OK"</span>,
+			<span class="json-key">token</span>: <span class="json-string">""</span>
+		}
+}</pre>
+
+				</div>
+			</span>
+		</li>
+	</ul>
 </div>

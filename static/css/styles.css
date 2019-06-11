@@ -89,10 +89,21 @@
   border-bottom: none !important;
 }
 
+.text-primary {
+  color: #0086b4;
+}
+
+.text-warning {
+  color: #e9b400;
+}
 
 /* Main styles */
 .blurb h2 {
   color: #222 !important;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important;
 }
 
 .mt-1 {
@@ -166,6 +177,7 @@
   line-height: 1.45;
   overflow: auto;
   padding: 16px;
+  tab-size: 2;
 }
 
 .code-inline {
@@ -175,8 +187,22 @@
   font-size: 90%;
   line-height: 1.45;
   overflow: auto;
+  tab-size: 2;
 }
 
 h1 {
   color: #222;
+}
+
+.api-body-example {
+  margin: 0 auto;
+  max-width: 75%;
+}
+
+.json-key {
+  color: #6dab49;
+}
+
+.json-string {
+  color: #0086b4;
 }
