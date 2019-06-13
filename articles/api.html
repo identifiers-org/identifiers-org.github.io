@@ -6,19 +6,29 @@ title: Api documentation
 <div class="blurb">
 	<h2><i class="icon icon-common icon-code mr-2"></i>API documentation</h2>
 
+	<div class="infobox">
+		<i class="icon icon-common icon-info text-primary size-300 mr-2"></i>
+		<p class="mb-0">
+			The main service in Identifiers.org is Compact Identifier resolution. Appending a Compact Identifier to the
+			URL, as explained in the <a href="articles/identification_scheme.html">identification scheme</a>, will
+			redirect the requester to the relevant item in the specified resource.
+		</p>
+	</div>
+
 	<p>
-		The API service infrastructure is divided in two endpoints: <a href="#resolver">resolver API</a> and
-		<a href="#registry">registry API</a>.
+		The rest of the API service infrastructure is divided in two different areas: <a href="#resolution">Resolution
+		API</a> and <a href="#registry">Registry API</a>.
 	</p>
 
-
-	<h3 id="resolver" class="mt-3">Resolver API</h3>
+	<h3 id="resolution" class="mt-3">Resolution API</h3>
 	<p>
-		The Identifiers.org resolver API is located at: <code class="code-inline">
-			https://resolver.api.identifiers.org</code>. It provides the resolution endpoint.
+		The Identifiers.org Resolution API is located at: <code class="code-inline">
+			https://resolver.api.identifiers.org</code>. It provides the resolver endpoint. This is a new feature,
+			not present in the old platform. This endpoint will return a list of the available providers for a
+			resource, along with some information about them. Refer to the example for more details.
 	</p>
 
-	<h4 class="mt-2">Resolver API services</h4>
+	<h4 class="mt-2">Resolution API services</h4>
 	<h5>
 		<i class="icon icon-common icon-external-link-alt mw-2"></i>Compact Identifier resolution
 	</h5>

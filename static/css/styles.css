@@ -102,6 +102,10 @@
   color: #222 !important;
 }
 
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
+
 .mb-1 {
   margin-bottom: 1rem !important;
 }
@@ -205,4 +209,18 @@ h1 {
 
 .json-string {
   color: #0086b4;
+}
+
+.infobox {
+  display: flex;
+  align-items: center;
+}
+
+.api-comparison {
+  display: flex;
+
+}
+
+.api {
+  width: 50%;
 }

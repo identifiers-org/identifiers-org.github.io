@@ -1,0 +1,419 @@
+---
+layout: no-sidebar
+title: Migrating from the old platform
+---
+
+<div class="blurb">
+	<h2><i class="icon icon-common icon-arrow-circle-up mr-2"></i>Migrating from the old platform</h2>
+
+	<div class="infobox">
+		<i class="icon icon-common icon-info text-primary size-300 mr-2"></i>
+		<p class="mb-0">
+			The are no changes at all in Compact Identifier or URI resolution, although we recommend switching
+			all URI resolutions to Compact Identifiers, as that is going to be the standard from now on. We will
+			still provide full support to URI resolution, and there is no expiry date for that.
+	</div>
+
+	<h3 class="mt-3">API endpoint changes</h3>
+
+	<ul>
+		<li>
+			The endpoint to download the whole registry dataset, previously located at <code class="code-inline">
+			<a href="https://identifiers.org/rest/collections/expand">https://identifiers.org/rest/collections/expand</a>
+			</code>has been moved to<code class="code-inline"><a href="https://registry.api.identifiers.org/resolutionApi/getResolverDataset">
+			https://registry.api.identifiers.org/resolutionApi/getResolverDataset</a></code>, as described in the <a
+			href="https://docs.identifiers.org/articles/api.html#getdataset">API documentation</a>.
+		</li>
+
+		<li class="mt-2">
+			The following changes have been made in the data model: (hover over a field to highlight the corresponding new or old field).
+		</li>
+
+		<div class="api-comparison">
+			<div class="api">
+				<div>
+					<h5>Old data model</h5>
+				</div>
+
+<pre class="code-inline mr-2">{
+
+	<span class="api-mirId" onmouseover="highlightApi('api-mirId')" onmouseout="dehighlightApi('api-mirId')">"id": "MIR:00000002"</span>,
+	<span class="api-prefix" onmouseover="highlightApi('api-prefix')" onmouseout="dehighlightApi('api-prefix')">"prefix": "chebi"</span>,
+	<span class="api-name" onmouseover="highlightApi('api-name')" onmouseout="dehighlightApi('api-name')">"name": "ChEBI"</span>,
+	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"definition": "Chemical Entities of Biological Interest..."</span>,
+	<span class="api-pattern" onmouseover="highlightApi('api-pattern')" onmouseout="dehighlightApi('api-pattern')">"pattern": "^CHEBI:\\d+$"</span>,
+	<span class="api-url" onmouseover="highlightApi('api-url')" onmouseout="dehighlightApi('api-url')">"url": "http://identifiers.org/chebi"</span>,
+
+
+	<span class="api-namespaceembeddedinlui" onmouseover="highlightApi('api-namespaceembeddedinlui')" onmouseout="dehighlightApi('api-namespaceembeddedinlui')">"prefixed": 1</span>,
+	<span class="api-resources" onmouseover="highlightApi('api-resources')" onmouseout="dehighlightApi('api-resources')">"resources":</span> [
+		{
+
+			<span class="api-resources-mirId" onmouseover="highlightApi('api-resources-mirId')" onmouseout="dehighlightApi('api-resources-mirId')">"id": "MIR:00100009"</span>,
+			<span class="api-resources-urlPattern" onmouseover="highlightApi('api-resources-urlPattern')" onmouseout="dehighlightApi('api-resources-urlPattern')">"accessURL": "https://www.ebi.ac.uk/chebi/CHEBI:{$id}"</span>,
+
+			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"info": "ChEBI (Chemical Entities of Biological Interest)"</span>,
+			<span class="api-resources-official" onmouseover="highlightApi('api-resources-official')" onmouseout="dehighlightApi('api-resources-official')">"official": true</span>,
+			<span class="api-resources-providerCode" onmouseover="highlightApi('api-resources-providerCode')" onmouseout="dehighlightApi('api-resources-providerCode')">"resourcePrefix": "ebi"</span>,
+			<span class="api-resources-sampleId" onmouseover="highlightApi('api-resources-sampleId')" onmouseout="dehighlightApi('api-resources-sampleId')">"localId": "36927"</span>,
+			<span class="api-resources-resourceHomeUrl" onmouseover="highlightApi('api-resources-resourceHomeUrl')" onmouseout="dehighlightApi('api-resources-resourceHomeUrl')">"resourceURL": "https://www.ebi.ac.uk/chebi/"</span>
+			<span class="api-resources-institution" onmouseover="highlightApi('api-resources-institution')" onmouseout="dehighlightApi('api-resources-institution')">"institution": "EMBL-EBI"</span>,
+			<span class="api-resources-testString" onmouseover="highlightApi('api-resources-testString')" onmouseout="dehighlightApi('api-resources-testString')">"testString": "carbon-14"</span>,
+
+
+			<span class="api-resources-location" onmouseover="highlightApi('api-resources-location')" onmouseout="dehighlightApi('api-resources-location')">"location": "UK"</span>,
+		}
+	]
+}</pre>
+
+			</div>
+
+			<div class="api">
+				<div>
+					<h5>New data model</h5>
+				</div>
+
+<pre class="code-inline">{
+	<span class="api-id" onmouseover="highlightApi('api-id')" onmouseout="dehighlightApi('api-id')">"id": 1</span>,
+	<span class="api-mirId" onmouseover="highlightApi('api-mirId')" onmouseout="dehighlightApi('api-mirId')">"mirId": "MIR:00000002"</span>,
+	<span class="api-prefix" onmouseover="highlightApi('api-prefix')" onmouseout="dehighlightApi('api-prefix')">"prefix": "chebi"</span>,
+	<span class="api-name" onmouseover="highlightApi('api-name')" onmouseout="dehighlightApi('api-name')">"name": "ChEBI"</span>,
+	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"description": "Chemical Entities of Biological Interest..."</span>,
+	<span class="api-pattern" onmouseover="highlightApi('api-pattern')" onmouseout="dehighlightApi('api-pattern')">"pattern": "^CHEBI:\d+$"</span>,
+	<span class="api-created" onmouseover="highlightApi('api-created')" onmouseout="dehighlightApi('api-created')">"created": "2019-06-11T14:15:26.925+0000"</span>,
+	<span class="api-modified" onmouseover="highlightApi('api-modified')" onmouseout="dehighlightApi('api-modified')">"modified": "2019-06-11T14:15:26.925+0000"</span>,
+	<span class="api-sampleid" onmouseover="highlightApi('api-sampleid')" onmouseout="dehighlightApi('api-sampleid')">"sampleId": "36927",</span>
+	<span class="api-namespaceembeddedinlui" onmouseover="highlightApi('api-namespaceembeddedinlui')" onmouseout="dehighlightApi('api-namespaceembeddedinlui')">"namespaceEmbeddedInLui": true</span>
+	<span class="api-resources" onmouseover="highlightApi('api-resources')" onmouseout="dehighlightApi('api-resources')">"resources":</span> [
+		{
+			<span class="api-resources-id" onmouseover="highlightApi('api-resources-id')" onmouseout="dehighlightApi('api-resources-id')">"id": 3</span>,
+			<span class="api-resources-mirId" onmouseover="highlightApi('api-resources-mirId')" onmouseout="dehighlightApi('api-resources-mirId')">"mirId": "MIR:00100009"</span>,
+			<span class="api-resources-urlPattern" onmouseover="highlightApi('api-resources-urlPattern')" onmouseout="dehighlightApi('api-resources-urlPattern')">"urlPattern": "https://www.ebi.ac.uk/chebi/CHEBI:{$id}"</span>,
+			<span class="api-resources-name" onmouseover="highlightApi('api-resources-name')" onmouseout="dehighlightApi('api-resources-name')">"name": "ChEBI (Chemical Entities of Biological Interest)"</span>,
+			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"description": "ChEBI (Chemical Entities of Biological..."</span>,
+			<span class="api-resources-official" onmouseover="highlightApi('api-resources-official')" onmouseout="dehighlightApi('api-resources-official')">"official": true</span>,
+			<span class="api-resources-providerCode" onmouseover="highlightApi('api-resources-providerCode')" onmouseout="dehighlightApi('api-resources-providerCode')">"providerCode": "ebi"</span>,
+			<span class="api-resources-sampleId" onmouseover="highlightApi('api-resources-sampleId')" onmouseout="dehighlightApi('api-resources-sampleId')">"sampleId": "36927"</span>,
+			<span class="api-resources-resourceHomeUrl" onmouseover="highlightApi('api-resources-resourceHomeUrl')" onmouseout="dehighlightApi('api-resources-resourceHomeUrl')">"resourceHomeUrl": "https://www.ebi.ac.uk/chebi/"</span>,
+			<span class="api-resources-institution" onmouseover="highlightApi('api-resources-institution')" onmouseout="dehighlightApi('api-resources-institution')">"institution": {
+				"id": 2,
+				"name": "EMBL-EBI",
+				"homeUrl": "CURATOR_REVIEW",
+				"description": "CURATOR_REVIEW"</span>,
+				<span class="api-resources-location" onmouseover="highlightApi('api-resources-location')" onmouseout="dehighlightApi('api-resources-location')">"location": {
+					"countryCode": "GB",
+					"countryName": "United Kingdom"
+				}</span>
+			<span class="api-resources-institution" onmouseover="highlightApi('api-resources-institution')" onmouseout="dehighlightApi('api-resources-institution')">}</span>
+		}
+	]
+}</pre>
+
+				</div>
+			</div>
+
+			<h4 class="mt-2">Detailed changes</h4>
+
+			<h5><i>namespace</i> model</h5>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Old API</th>
+						<th>New API</th>
+						<th>Information</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>id</strong>
+						</td>
+						<td>
+							Internal database id of the namespace.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>id</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>mirId</strong>
+						</td>
+						<td>
+							In the new API, <strong>id</strong> is the internal database id of the namespace.
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>name</strong>
+						</td>
+						<td>
+							Namespace name.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>definition</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>description</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-minus-circle mr-2" title="field removed"></i>
+							<strong>url</strong>
+						</td>
+						<td>
+							Internal Identifiers.org URL has been deprecated.
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>created</strong>
+						</td>
+						<td>
+							Namespace addition date.
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>modified</strong>
+						</td>
+						<td>
+							Namespace last modified date.
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>sampleId</strong>
+						</td>
+						<td>
+							Namespace sample ID.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>prefixed</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>namespaceEmbeddedInLui</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 class="mt-3"><i>resource</i> model</h5>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Old API</th>
+						<th>New API</th>
+						<th>Information</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>id</strong>
+						</td>
+						<td>
+							Internal database id of the resource.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>id</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>mirId</strong>
+						</td>
+						<td>
+							In the new API, <strong>id</strong> is the internal database id of the resource.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>accessURL</strong></td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>urlPattern</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-plus-circle mr-2" title="field added"></i>
+							<strong>name</strong>
+						</td>
+						<td>
+							Resource name.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>info</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>description</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td><strong>resourcePrefix</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>providerCode</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td><strong>localId</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>sampleId</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td><strong>resourceURL</strong> </td>
+						<td>
+							<i class="icon icon-common icon-arrow-circle-right mr-2" title="field changed"></i><strong>resourceHomeUrl</strong>
+						</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td><strong>institution</strong> </td>
+						<td>
+							<i class="icon icon-common icon-info mr-2" title="field changed"></i>
+						</td>
+						<td>
+								<strong>institution</strong> is now an object. Refer to its <a href="#institution">definition</a>.
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<i class="icon icon-common icon-minus-circle mr-2" title="field removed"></i>
+							<strong>testString</strong>
+						</td>
+						<td>
+							testString has been deprecated.
+						</td>
+					</tr>
+					<tr>
+						<td><strong>location</strong> </td>
+						<td>
+							<i class="icon icon-common icon-info mr-2" title="field changed"></i>
+						</td>
+						<td>
+							<strong>location</strong> is now an object. Refer to its <a href="#location">definition</a>.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 id="institution" class="mt-3"><i>institution</i> model</h5>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Field</th>
+						<th>Information</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<strong>id</strong>
+						</td>
+						<td>
+							Internal database id of the institution.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>name</strong>
+						</td>
+						<td>
+							Name of the institution.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>homeUrl</strong>
+						</td>
+						<td>
+							Institution home URL.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>description</strong>
+						</td>
+						<td>
+							Institution description.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>location</strong>
+						</td>
+						<td>
+							Location object containing the institution's location. Refer to the <a href="#location">definition</a>.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5 id="location" class="mt-3"><i>location</i> model</h5>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Field</th>
+						<th>Information</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<strong>countryCode</strong>
+						</td>
+						<td>
+							<a href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166</a> compliant country code.
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>countryName</strong>
+						</td>
+						<td>
+							<a href="https://www.iso.org/iso-3166-country-codes.html">ISO-3166</a> compliant country name.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+<script>
+	function highlightApi(id) {
+		[...document.getElementsByClassName(id)].forEach(element => element.setAttribute('style', 'font-weight: bold;'));
+	}
+
+	function dehighlightApi(id) {
+		[...document.getElementsByClassName(id)].forEach(element => element.setAttribute('style', 'font-weight: normal;'));
+	}
+</script>
