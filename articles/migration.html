@@ -18,18 +18,20 @@ title: Migrating from the old platform
 
 	<ul>
 		<li>
-			The endpoint to download the whole registry dataset, previously located at <code class="code-inline">
-			<a href="https://identifiers.org/rest/collections/expand">https://identifiers.org/rest/collections/expand</a>
-			</code>has been moved to<code class="code-inline"><a href="https://registry.api.identifiers.org/resolutionApi/getResolverDataset">
-			https://registry.api.identifiers.org/resolutionApi/getResolverDataset</a></code>, as described in the <a
-			href="https://docs.identifiers.org/articles/api.html#getdataset">API documentation</a>.
+			The endpoint to download the whole registry dataset, previously located at <code class="code-inline"><a
+				href="https://identifiers.org/rest/collections/expand"
+			>https://identifiers.org/rest/collections/expand</a></code> has been moved to<code class="code-inline"><a
+				href="https://registry.api.identifiers.org/resolutionApi/getResolverDataset"
+			>https://registry.api.identifiers.org/resolutionApi/getResolverDataset</a></code>, as described in the <a
+				href="https://docs.identifiers.org/articles/api.html#getdataset">API documentation</a>.
 		</li>
 
 		<li class="mt-2">
-			The following changes have been made in the data model: (hover over a field to highlight the corresponding new or old field).
+			The following boxes show a side by side comparison of the JSON response of namespace request, along with a
+			single provider; to detail the changes made to the data model. Hover over a field to highlight the corresponding new or old field.
 		</li>
 
-		<div class="api-comparison">
+		<div class="api-comparison mt-2">
 			<div class="api">
 				<div>
 					<h5>Old data model</h5>
