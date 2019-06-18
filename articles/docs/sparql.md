@@ -1,10 +1,12 @@
 # SPARQL Endpoint
 The Identifiers.org SPARQL endpoint allows the conversion of URIs from one given scheme to the alternative equivalent ones. This was specially developed with semantic data integration in mind, where one often needs to consume heterogeneous datasets which use different types of URIs. This service relies on URI schemes recorded in the Registry. If you find a URI which is not yet listed, please report them to us, either via the 'suggest modifications' link from the proper data collection page on the Registry, or directly by emailing us.
 
+**Please note the Identifiers.org SPARQL endpoint is running at https://ebi.identifiers.org/services/sparql**
+
 ## Implementation
 This SPARQL Endpoint is implemented using Sesame openRDF platform. SPARQL query results are generated on the fly using the Registry's database content. Therefore this SPARQL Endpoint will not allow you to list all content in the database.
 
-##SPARQL query examples
+## SPARQL query examples
 1. All the protein references associated to elements of the type SBML species in the model Tolic2000 Insulin Glucose Feedback, retrieve the relevant human proteins from UniProt and their domains from Bio2RDF InterPro.
 
 Run this query at BioModels SPARQL end point
@@ -24,7 +26,7 @@ Run this query at BioModels SPARQL end point
        ?s bqbio:isVersionOf ?protein_term
        FILTER (?model = biomodel:BIOMD0000000372)
 
-       SERVICE <http://identifiers.org/services/sparql>{
+       SERVICE <https://ebi.identifiers.org/services/sparql>{
           ?protein_term owl:sameAs ?protein .
        }
 
@@ -35,7 +37,7 @@ Run this query at BioModels SPARQL end point
           FILTER regex(?protein_domain,"IPR0","i").
        }
 
-       SERVICE <http://identifiers.org/services/sparql>{
+       SERVICE <https://ebi.identifiers.org/services/sparql>{
           ?protein_domain owl:sameAs ?uris .
        }
 
@@ -67,7 +69,7 @@ Run this query at BioModels SPARQL end point
         ?s bqbio:isVersionOf ?go_term
     	FILTER (?model = biomodel:BIOMD0000000001)
 
-        SERVICE <http://identifiers.org/services/sparql>{
+        SERVICE <https://ebi.identifiers.org/services/sparql>{
         	?go_term owl:sameAs ?go .
     	}
 
@@ -108,7 +110,7 @@ Run this query at BioModels SPARQL end point
           	?annotation rdfs:comment ?text
       	}
 
-        SERVICE <http://identifiers.org/services/sparql>{
+        SERVICE <https://ebi.identifiers.org/services/sparql>{
         	?protein owl:sameAs ?proteinAlt .
     	}
 
