@@ -13,7 +13,7 @@ Provider Compact Identifier pattern:
 **We recommend using Compact Identifiers for annotation and citation, linked using identifiers.org URLs.**
 
 ## URI resolution
-Identifiers.org provides direct access to the identified data using one selected provider (or resource). When multiple providers are recorded in the registry, and no provider is specified in the Compact Identifier, the most  is selected for resolution. This allows the location independent referencing (and resolution if required) of data records.
+Identifiers.org provides direct access to the identified data using one selected provider (or resource). When multiple providers are recorded in the registry, and no provider is specified in the Compact Identifier, the provider with the highest recommendation score is selected for resolution. This allows the location independent referencing (and resolution if required) of data records.
 
 URI resolution pattern:
 ```http://identifiers.org/[namespace]/[entity]``` eg: http://identifiers.org/pdb/2gc4.
