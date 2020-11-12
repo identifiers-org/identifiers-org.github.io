@@ -6,7 +6,7 @@
 /* Logo styles */
 .logo-box {
   display: flex;
-  margin: 0 0 .5rem 1rem;
+  margin: 0 0 0.5rem 1rem;
 }
 
 .logo {
@@ -55,7 +55,6 @@
   max-width: 80rem;
 }
 
-
 /* Navbar active */
 .navbar-active {
   color: #292929 !important;
@@ -65,9 +64,9 @@
 /* Elixir banner */
 .elixir-banner {
   background-color: #eaeaea;
-  padding: .5rem;
+  padding: 0.5rem;
   max-width: 80rem;
-  margin: 5rem auto .5rem auto;
+  margin: 5rem auto 0.5rem auto;
 }
 
 .elixir-banner__logo {
@@ -108,6 +107,10 @@
 
 .mb-1 {
   margin-bottom: 1rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 3rem !important;
 }
 
 .mt-1 {
@@ -176,7 +179,7 @@
 .code {
   background-color: #eaeaea;
   border: 1px solid #cacaca;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
   font-size: 85%;
   line-height: 1.45;
   overflow: auto;
@@ -187,7 +190,7 @@
 .code-inline {
   background-color: #eaeaea;
   border: 1px solid #cacaca;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
   font-size: 90%;
   line-height: 1.45;
   overflow: auto;
@@ -218,9 +221,108 @@ h1 {
 
 .api-comparison {
   display: flex;
-
 }
 
 .api {
   width: 50%;
+}
+
+.avatar {
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  filter: grayscale(100%);
+}
+
+.people-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.person {
+  align-items: center;
+  display: flex;
+  width: 48%;
+}
+
+.person-avatar-container {
+  border-radius: 50%;
+  border: 2px solid #0086b4;
+  display: inline-block;
+  min-width: 128px;
+  height: 128px;
+}
+
+.person-text-container {
+  margin-left: 1.5rem;
+}
+
+.person-link {
+  color: #0086b4;
+  border-bottom: none;
+}
+
+.person-title {
+  align-items: baseline;
+  display: flex;
+}
+
+.cdl {
+  align-items: center;
+  background-color: #eaeaea;
+  border: 1px solid #cacaca;
+  display: flex;
+  margin: 0 4rem;
+  padding: 1rem;
+}
+
+.cdl > p {
+  margin: 0 2rem;
+}
+
+.funding-ul {
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.funding-ul-small {
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.funding-li {
+  margin: 2rem 1rem 0 1rem;
+  width: 256px;
+}
+
+.funding-li-elixir {
+  margin: 2rem 1rem 0 1rem;
+  width: 192px;
+}
+
+.funding-li-small {
+  margin: 2rem 1rem 0 1rem;
+  width: 96px;
+}
+
+.title-link,
+.title-link:hover,
+.title-link:active,
+.funding-link,
+.funding-link:hover,
+.funding-link:active {
+  border-bottom: none;
+}
+
+.title-github {
+  margin-left: 0.5rem;
+}
+
+hr {
+  border-color: #777;
+  margin: 2.5rem 10rem;
 }
