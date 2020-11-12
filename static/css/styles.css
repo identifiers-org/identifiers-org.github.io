@@ -276,6 +276,11 @@ h1 {
   padding: 1rem;
 }
 
+.cdl-link,.cdl-link:hover {
+  min-width: 200px;
+  border-bottom: none;
+}
+
 .cdl > p {
   margin: 0 2rem;
 }
