@@ -329,6 +329,18 @@ h1 {
   height: 3.25rem;
 }
 
+th, tr:last-child {
+  border-bottom: solid 1px;
+}
+
+tr:nth-child(2n) > td {
+  background: Gainsboro;
+}
+
+th {
+  border-top: solid 1px;
+}
+
 .title-link,
 .title-link:hover,
 .title-link:active,

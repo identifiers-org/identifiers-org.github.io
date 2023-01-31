@@ -4,5 +4,4 @@ source "https://rubygems.org"
 
 gem 'bundle'
 gem 'jekyll'
-gem 'jekyll-node-module'
 gem 'jekyll-toc'

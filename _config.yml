@@ -2,7 +2,7 @@
 title:       Identifiers.org
 group:       Identifiers.org
 email:       identifiers-org@ebi.ac.uk
-domain:      //identifiers-org.github.io
+domain:      https://docs/identifiers.org
 baseurl:     /
 permalink:   docs
 
@@ -18,14 +18,6 @@ markdown:    kramdown
 highlighter: rouge
 
 plugins:
-  - jekyll-node-module
   - jekyll-toc
 resolverUrl: "https://cloud.identifiers.org"
 registryUrl: "https://registry.identifiers.org"
-
-node_modules:
-  copy:
-    - source: "ebi-framework"
-      target: "/static/ebi-framework"
-    - source: "EBI-Icon-fonts"
-      target: "/static/EBI-Icon-fonts"
