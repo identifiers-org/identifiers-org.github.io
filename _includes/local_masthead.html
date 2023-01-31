@@ -1,7 +1,7 @@
 <div data-sticky-container>
   <div id="masthead" class="masthead" data-sticky data-sticky-on="large" data-top-anchor="main-content-area:top" data-btm-anchor="main-content-area:bottom">
     <div class="masthead-inner row expanded">
-      <div class="columns medium-7" id="local-title">
+      <div class="columns medium-12" id="local-title">
         <div class="logo-box">
           <img src="/static/identifiers_logo.png" />
           <div class="logo-text">
@@ -10,6 +10,7 @@
           </div>
         </div>
       </div>
+
       <nav>
         <ul id="local-nav" class="dropdown menu float-left" data-description="navigational" data-dropdown-menu>
           <li>
@@ -32,13 +33,25 @@
 
           <li>
             <a href="https://registry.identifiers.org/prefixregistrationrequest">
-              <i class="icon icon-common icon-hand-point-up"></i> Request prefix
+              <i class="icon icon-common icon-leaf"></i> Request prefix
+            </a>
+          </li>
+
+          <li>
+            <a href="https://registry.identifiers.org/resourceregistrationrequest">
+              <i class="icon icon-common icon-cube"></i> Request resource
             </a>
           </li>
 
           <li class="active">
             <a class="navbar-active" href="{{site.domain}}">
               <i class="icon icon-common icon-documentation active"></i> Documentation
+            </a>
+          </li>
+
+          <li>
+            <a href="https://auth.identifiers.org/auth/realms/idorg/protocol/openid-connect/auth?client_id=hq-web-frontend&redirect_uri=https%3A%2F%2Fregistry.identifiers.org%2F%23!&response_mode=fragment&response_type=code">
+              <i class="icon icon-common icon-sign-in-alt"></i> Sign in
             </a>
           </li>
 

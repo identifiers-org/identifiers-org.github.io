@@ -1,3 +1,8 @@
+---
+layout: default
+title: Identifiers.org documentation
+---
+
 # Cloud Native Identifiers.org
 # Motivation
 

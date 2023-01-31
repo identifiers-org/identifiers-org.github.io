@@ -1,4 +1,8 @@
-# How to cite the Identifiers.org
+---
+layout: default
+title: Identifiers.org documentation
+---
+# <i class="icon icon-common icon-address-card"></i> How to cite the Identifiers.org
 
 Please cite Identifiers.org using:
 

@@ -1,16 +1,20 @@
-# Identification scheme
+---
+layout: default
+title: Identifiers.org documentation
+---
 
 ## Identification of data entities using Compact Identifiers
 
 ### Compact Identifiers syntax
-A Compact Identifier is a unique string consisting of a **Prefix** (assigned by curator), a colon (‘:’), and an **Accession** (e.g. local identifier string). The **Prefix** is composed of an optional **Provider Code**, and an assigned **Namespace**, separated by a slash (‘/’).
+A Compact Identifier is a unique string consisting of a **Prefix** (assigned by curator), a colon (‘:’), and an **Accession** (e.g. local identifier string). 
+The **Prefix** is composed of an optional **Provider Code**, and an assigned **Namespace**, separated by a slash (‘/’).
 
 ### Examples
 
 Compact identifier syntax, with and without provider codes:
 * namespace:accession
   * [pubmed:22140103](https://identifiers.org/pubmed:22140103)
-  * [https://identifiers.org/ec-code:1.1.1.1](https://identifiers.org/ec-code:1.1.1.1)
+  * [ec-code:1.1.1.1](https://identifiers.org/ec-code:1.1.1.1)
   * [taxonomy:9606](https://identifiers.org/taxonomy:9606)
 * provider_code/namespace:accession
   * [epmc/pubmed:22140103](https://identifiers.org/epmc/pubmed:22140103)

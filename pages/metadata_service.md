@@ -1,8 +1,9 @@
 ---
-layout: no-sidebar
+layout: default
+title: Identifiers.org documentation
 ---
 
-# Metadata Service
+# <i class="icon icon-common icon-mapping"></i> Metadata Service
 
 Identifiers.org metadata service enables users to extract Schema.org from landing pages of the original providers by passing in Compact Identifiers.
 

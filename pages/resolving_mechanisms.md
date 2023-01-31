@@ -1,4 +1,9 @@
-# Resolving mechanisms
+---
+layout: default
+title: Identifiers.org documentation
+---
+
+# <i class="icon icon-common icon-search"></i> Resolving mechanisms
 A central, curated registry stores the information necessary to resolve either Compact Identifier or URI forms of identifier, which are sent as queries to the Identifiers.org resolving system.
 
 ## Compact Identifier resolution

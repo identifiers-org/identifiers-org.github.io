@@ -1,4 +1,13 @@
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK33KQZXBT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SK33KQZXBT');
+  </script>
+
   <meta charset="utf-8">
   <title>{{ site.title }}</title>
 
@@ -16,14 +25,13 @@
 
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
-  <link rel="stylesheet" href="//ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all">
-  <link rel="stylesheet" href="//ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css" media="all">
-  <link rel="stylesheet" href="https://www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.3/css/theme-ebi-industry.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/static/ebi-framework/css/ebi-global.css" />
 
-  {% comment %} Custom global CSS could go here: {% endcomment %}
-  {% for css in site.custom_css %}
-    <link rel="stylesheet" href="{{css}}" type="text/css" media="all">
-  {% endfor %}
+  <script src="/static/ebi-framework/js/script.min.js"></script>
+  <link rel="stylesheet" href="/static/EBI-Icon-fonts/fonts.css">
+  <link rel="stylesheet" href="/static/ebi-framework/css/theme-ebi-industry.css" />
+
+  <link rel="stylesheet" href="/static/css/styles.css" type="text/css" media="all">
 
   <!-- Custom masthead color -->
   <meta name="ebi:masthead-color" content="#0086b4">

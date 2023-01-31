@@ -1,13 +1,10 @@
 # Site settings.
 title:       Identifiers.org
 group:       Identifiers.org
-email:       mbernal@ebi.ac.uk
+email:       identifiers-org@ebi.ac.uk
 domain:      //identifiers-org.github.io
 baseurl:     /
 permalink:   docs
-
-custom_css:
-  - "/static/css/styles.css"
 
 
 # Root repo for this project.
@@ -20,11 +17,15 @@ lsi:         false
 markdown:    kramdown
 highlighter: rouge
 
-# Allow redirects
-# https://help.github.com/articles/redirects-on-github-pages/
 plugins:
-#  - jekyll-redirect-from
-
-# Urls.
+  - jekyll-node-module
+  - jekyll-toc
 resolverUrl: "https://cloud.identifiers.org"
 registryUrl: "https://registry.identifiers.org"
+
+node_modules:
+  copy:
+    - source: "ebi-framework"
+      target: "/static/ebi-framework"
+    - source: "EBI-Icon-fonts"
+      target: "/static/EBI-Icon-fonts"

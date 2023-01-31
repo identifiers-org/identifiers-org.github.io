@@ -3,6 +3,10 @@
   max-width: none !important;
 }
 
+#sidebar li {
+  margin-bottom: .25rem;
+}
+
 /* Logo styles */
 .logo-box {
   display: flex;
@@ -197,6 +201,10 @@
   tab-size: 2;
 }
 
+.code-inline > span {
+  text-overflow: ellipsis;
+}
+
 h1 {
   color: #222;
 }
@@ -237,12 +245,14 @@ h1 {
 .people-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .person {
   align-items: center;
   display: flex;
   width: 48%;
+  margin-bottom: 1em;
 }
 
 .person-avatar-container {
@@ -254,7 +264,7 @@ h1 {
 }
 
 .person-text-container {
-  margin-left: 1.5rem;
+  margin-left: .25rem;
 }
 
 .person-link {
@@ -300,7 +310,7 @@ h1 {
 }
 
 .funding-li {
-  margin: 2rem 1rem 0 1rem;
+  margin: .5rem 0;
   width: 256px;
 }
 
@@ -310,8 +320,13 @@ h1 {
 }
 
 .funding-li-small {
-  margin: 2rem 1rem 0 1rem;
-  width: 96px;
+  margin: 2rem 1rem;
+  height: 2rem;
+}
+
+.funding-li-medium {
+  margin: 2rem 1rem;
+  height: 3.25rem;
 }
 
 .title-link,
@@ -321,10 +336,19 @@ h1 {
 .funding-link:hover,
 .funding-link:active {
   border-bottom: none;
+  display: inline-block;
 }
 
-.title-github {
-  margin-left: 0.5rem;
+.title-icon {
+  margin-left: 0.25rem;
+}
+
+.person-text-container > a {
+  display: inline-block;
+}
+
+.person-text-container > a:visited {
+  border: none;
 }
 
 hr {

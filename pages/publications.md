@@ -1,4 +1,9 @@
-# Publication
+---
+layout: default
+title: Identifiers.org documentation
+---
+
+# <i class="icon icon-common icon-publication"></i> Publications
 
 [Uniform resolution of compact identifiers for biomedical data.](https://identifiers.org/pubmed:29737976)
 Sarala M. Wimalaratne, Nick Juty, John Kunze, Greg Janée, Julie A. McMurry, Niall Beard, Rafael Jimenez, Jeffrey S. Grethe, Henning Hermjakob, Maryann E. Martone & Tim Clark

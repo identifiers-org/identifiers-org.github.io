@@ -1,5 +1,5 @@
 ---
-layout: no-sidebar
+layout: default
 title: Migrating from the old platform
 ---
 
@@ -21,7 +21,7 @@ title: Migrating from the old platform
 		>https://ebi.identifiers.org/pdb</a></code> has been moved to <code class="code-inline"><a
 			href="https://registry.identifiers.org/registry/pdb" target="_blank" noreferrer noopener
 		>https://registry.identifiers.org/registry/pdb</a></code>, and can be navigated to using the new web as detailed
-		in the <a href="https://docs.identifiers.org/articles/services.html#registryservices">web services documentation</a>.
+		in the <a href="/pages/services.html#registryservices">web services documentation</a>.
 
 
 	<h3 class="mt-3">API endpoint changes</h3>
@@ -33,7 +33,7 @@ title: Migrating from the old platform
 			>https://identifiers.org/rest/collections/expand</a></code> has been moved to<code class="code-inline"><a
 				href="https://registry.api.identifiers.org/resolutionApi/getResolverDataset"
 			>https://registry.api.identifiers.org/resolutionApi/getResolverDataset</a></code>, as described in the <a
-				href="https://docs.identifiers.org/articles/api.html#getdataset">API documentation</a>.
+				href="/pages/api.html#getdataset">API documentation</a>.
 		</li>
 
 		<li class="mt-2">
@@ -52,7 +52,7 @@ title: Migrating from the old platform
 	<span class="api-mirId" onmouseover="highlightApi('api-mirId')" onmouseout="dehighlightApi('api-mirId')">"id": "MIR:00000002"</span>,
 	<span class="api-prefix" onmouseover="highlightApi('api-prefix')" onmouseout="dehighlightApi('api-prefix')">"prefix": "chebi"</span>,
 	<span class="api-name" onmouseover="highlightApi('api-name')" onmouseout="dehighlightApi('api-name')">"name": "ChEBI"</span>,
-	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"definition": "Chemical Entities of Biological Interest..."</span>,
+	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"definition": "Chemical Entities of Biological..."</span>,
 	<span class="api-pattern" onmouseover="highlightApi('api-pattern')" onmouseout="dehighlightApi('api-pattern')">"pattern": "^CHEBI:\\d+$"</span>,
 	<span class="api-url" onmouseover="highlightApi('api-url')" onmouseout="dehighlightApi('api-url')">"url": "http://identifiers.org/chebi"</span>,
 
@@ -64,7 +64,7 @@ title: Migrating from the old platform
 			<span class="api-resources-mirId" onmouseover="highlightApi('api-resources-mirId')" onmouseout="dehighlightApi('api-resources-mirId')">"id": "MIR:00100009"</span>,
 			<span class="api-resources-urlPattern" onmouseover="highlightApi('api-resources-urlPattern')" onmouseout="dehighlightApi('api-resources-urlPattern')">"accessURL": "https://www.ebi.ac.uk/chebi/CHEBI:{$id}"</span>,
 
-			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"info": "ChEBI (Chemical Entities of Biological Interest)"</span>,
+			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"info": "ChEBI (Chemical Entities of ..."</span>,
 			<span class="api-resources-official" onmouseover="highlightApi('api-resources-official')" onmouseout="dehighlightApi('api-resources-official')">"official": true</span>,
 			<span class="api-resources-providerCode" onmouseover="highlightApi('api-resources-providerCode')" onmouseout="dehighlightApi('api-resources-providerCode')">"resourcePrefix": "ebi"</span>,
 			<span class="api-resources-sampleId" onmouseover="highlightApi('api-resources-sampleId')" onmouseout="dehighlightApi('api-resources-sampleId')">"localId": "36927"</span>,
@@ -90,7 +90,7 @@ title: Migrating from the old platform
 	<span class="api-mirId" onmouseover="highlightApi('api-mirId')" onmouseout="dehighlightApi('api-mirId')">"mirId": "MIR:00000002"</span>,
 	<span class="api-prefix" onmouseover="highlightApi('api-prefix')" onmouseout="dehighlightApi('api-prefix')">"prefix": "chebi"</span>,
 	<span class="api-name" onmouseover="highlightApi('api-name')" onmouseout="dehighlightApi('api-name')">"name": "ChEBI"</span>,
-	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"description": "Chemical Entities of Biological Interest..."</span>,
+	<span class="api-description" onmouseover="highlightApi('api-description')" onmouseout="dehighlightApi('api-description')">"description": "Chemical Entities of Biological..."</span>,
 	<span class="api-pattern" onmouseover="highlightApi('api-pattern')" onmouseout="dehighlightApi('api-pattern')">"pattern": "^CHEBI:\d+$"</span>,
 	<span class="api-created" onmouseover="highlightApi('api-created')" onmouseout="dehighlightApi('api-created')">"created": "2019-06-11T14:15:26.925+0000"</span>,
 	<span class="api-modified" onmouseover="highlightApi('api-modified')" onmouseout="dehighlightApi('api-modified')">"modified": "2019-06-11T14:15:26.925+0000"</span>,
@@ -101,8 +101,8 @@ title: Migrating from the old platform
 			<span class="api-resources-id" onmouseover="highlightApi('api-resources-id')" onmouseout="dehighlightApi('api-resources-id')">"id": 3</span>,
 			<span class="api-resources-mirId" onmouseover="highlightApi('api-resources-mirId')" onmouseout="dehighlightApi('api-resources-mirId')">"mirId": "MIR:00100009"</span>,
 			<span class="api-resources-urlPattern" onmouseover="highlightApi('api-resources-urlPattern')" onmouseout="dehighlightApi('api-resources-urlPattern')">"urlPattern": "https://www.ebi.ac.uk/chebi/CHEBI:{$id}"</span>,
-			<span class="api-resources-name" onmouseover="highlightApi('api-resources-name')" onmouseout="dehighlightApi('api-resources-name')">"name": "ChEBI (Chemical Entities of Biological Interest)"</span>,
-			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"description": "ChEBI (Chemical Entities of Biological..."</span>,
+			<span class="api-resources-name" onmouseover="highlightApi('api-resources-name')" onmouseout="dehighlightApi('api-resources-name')">"name": "ChEBI (Chemical Entities of ...)"</span>,
+			<span class="api-resources-description" onmouseover="highlightApi('api-resources-description')" onmouseout="dehighlightApi('api-resources-description')">"description": "ChEBI (Chemical Entities of..."</span>,
 			<span class="api-resources-official" onmouseover="highlightApi('api-resources-official')" onmouseout="dehighlightApi('api-resources-official')">"official": true</span>,
 			<span class="api-resources-providerCode" onmouseover="highlightApi('api-resources-providerCode')" onmouseout="dehighlightApi('api-resources-providerCode')">"providerCode": "ebi"</span>,
 			<span class="api-resources-sampleId" onmouseover="highlightApi('api-resources-sampleId')" onmouseout="dehighlightApi('api-resources-sampleId')">"sampleId": "36927"</span>,

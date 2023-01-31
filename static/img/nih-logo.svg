@@ -1,14 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1224 792" style="enable-background:new 0 0 1224 792;" xml:space="preserve">
-<style type="text/css">
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1158.4 726.79999"
+   xml:space="preserve"
+   sodipodi:docname="nih-logo.svg"
+   width="1158.4"
+   height="726.79999"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs11" /><sodipodi:namedview
+   id="namedview9"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="0.2979798"
+   inkscape:cx="577.22034"
+   inkscape:cy="362.44068"
+   inkscape:window-width="1309"
+   inkscape:window-height="456"
+   inkscape:window-x="2043"
+   inkscape:window-y="302"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style2">
 	.st0{fill:#5E5F5F;}
 </style>
-<path class="st0" d="M1041.9,395.4L840.2,758.9H101c-36.9,0-66.9-29.9-66.9-66.9V99.2c0-36.9,29.9-66.9,66.9-66.9h740L1041.9,395.4
-	L1041.9,395.4z M410.1,558.9V234.1H356v239.2h-1L206.8,234.1l0,0h-60l0,0v324.8l0,0H201V320h1.4l147.9,238.9H410.1L410.1,558.9
-	L410.1,558.9z M523,558.9V234.1h-56.8v324.8H523L523,558.9L523,558.9z M841.5,234.1h-56.8l0,0v129.2H636.8V234.1h-56.8v324.8h56.8
-	V412.5h147.9v146.5l0,0h56.8V234.1L841.5,234.1z"/>
-<path class="st0" d="M890.7,759.1L1092,395.4L891.4,32.3h50.3c27.5,0,61,19.7,74.3,43.8l176.5,319.2l-177.2,319.9
-	c-13.3,24-46.8,43.7-74.3,43.7L890.7,759.1L890.7,759.1z"/>
+<path
+   class="st0"
+   d="M 1007.8,363.1 806.1,726.6 H 66.9 C 30,726.6 0,696.7 0,659.7 V 66.9 C 0,30 29.9,0 66.9,0 h 740 z M 376,526.6 V 201.8 H 321.9 V 441 h -1 L 172.7,201.8 v 0 h -60 v 0 324.8 0 h 54.2 V 287.7 h 1.4 L 316.2,526.6 H 376 Z m 112.9,0 V 201.8 h -56.8 v 324.8 h 56.8 z M 807.4,201.8 h -56.8 v 0 V 331 H 602.7 V 201.8 h -56.8 v 324.8 h 56.8 V 380.2 h 147.9 v 146.5 0 h 56.8 V 201.8 Z"
+   id="path4" />
+<path
+   class="st0"
+   d="M 856.6,726.8 1057.9,363.1 857.3,0 h 50.3 c 27.5,0 61,19.7 74.3,43.8 L 1158.4,363 981.2,682.9 c -13.3,24 -46.8,43.7 -74.3,43.7 z"
+   id="path6" />
 </svg>

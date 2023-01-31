@@ -1,7 +1,12 @@
+---
+layout: default
+title: Identifiers.org documentation
+---
+
 # SPARQL Endpoint
 The Identifiers.org SPARQL endpoint allows the conversion of URIs from one given scheme to the alternative equivalent ones. This was specially developed with semantic data integration in mind, where one often needs to consume heterogeneous datasets which use different types of URIs. This service relies on URI schemes recorded in the Registry. If you find a URI which is not yet listed, please report them to us, either via the 'suggest modifications' link from the proper data collection page on the Registry, or directly by emailing us.
 
-**Please note the Identifiers.org SPARQL endpoint is running at https://ebi.identifiers.org/services/sparql**
+**Please note the Identifiers.org SPARQL endpoint is running at <http://sparql.api.identifiers.org/>**
 
 ## Implementation
 This SPARQL Endpoint is implemented using Sesame openRDF platform. SPARQL query results are generated on the fly using the Registry's database content. Therefore this SPARQL Endpoint will not allow you to list all content in the database.
