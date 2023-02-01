@@ -7,8 +7,8 @@
       {% include local_masthead.html %}
 
       <section class="row mt-3" id="main-content-area">
-        <div class="small-12 medium-9 columns">{{ content | toc }}</div>
-        <div class="small-12 medium-3 columns sidebar sticky-container mt-1" data-sticky-container>
+        <div class="medium-12 large-9 columns">{{ content | toc }}</div>
+        <div class="medium-12 large-3 columns sidebar sticky-container mt-1" data-sticky-container>
           <div class="sticky is-anchored is-at-top" data-sticky data-options="marginTop:4;" data-anchor="main-content-area" data-events="resize">
             {% include sidebar.html %}
           </div>

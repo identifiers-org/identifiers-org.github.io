@@ -1,8 +1,41 @@
 ---
 layout: default
 title: Identifiers.org FAQ
-toc: true
+toc: false # Set this to true and build locally to regenerate toc 
 ---
+
+# <i class="icon icon-common icon-question-circle"></i> Frequently Asked Questions
+
+-   [General questions and definitions](#general-questions-and-definitions)
+    -   [What is the Identifiers.org Registry?](#what-is-the-identifiersorg-registry)
+    -   [What is MIRIAM, and what does it stand for?](#what-is-miriam-and-what-does-it-stand-for)
+    -   [Why can’t I find my favourite data collection in the Registry?](#why-cant-i-find-my-favourite-data-collection-in-the-registry)
+    -   [Are there plans to include more data collections?](#are-there-plans-to-include-more-data-collections)
+    -   [What is a resource?](#what-is-a-resource)
+    -   [Which collections are suitable for the Registry?](#which-collections-are-suitable-for-the-registry-)
+    -   [What information is stored in the Registry?](#what-information-is-stored-in-the-registry)
+-   [Identifiers.org](#identifiersorg)
+    -   [What is Identifiers.org?](#what-is-identifiersorg)
+    -   [What are Identifiers.org URIs?](#what-are-identifiersorg-uris)
+    -   [Why do we need Identifiers.org persistent URIs?](#why-do-we-need-identifiersorg-persistent-uris)
+    -   [How to generate Identifiers.org URIs?](#how-to-generate-identifiersorg-uris)
+    -   [What types of legacy URIs exist?](#what-types-of-legacy-uris-exist)
+-   [Create, edit and update collections](#create-edit-and-update-collections)
+    -   [How are new collections added to the Registry?](#how-are-new-collections-added-to-the-registry)
+    -   [What is the best way to make a submission to the Registry?](#what-is-the-best-way-to-make-a-submission-to-the-registry)
+    -   [What is the process by which submitted collections are made publicly available for use?](#what-is-the-process-by-which-submitted-collections-are-made-publicly-available-for-use)
+    -   [Who maintains URIs and their associated data?](#who-maintains-uris-and-their-associated-data)
+    -   [How do you modify an existing collection?](#how-do-you-modify-an-existing-collection)
+    -   [Who can delete an Identifiers.org URI or collection?](#who-can-delete-an-identifiersorg-uri-or-collection)
+-   [Services and availability](#services-and-availability)
+    -   [How do I find a collection suitable for a particular kind of annotation?](#how-do-i-find-a-collection-suitable-for-a-particular-kind-of-annotation)
+    -   [Is there any way to determine the reliability of a resource before I use it?](#is-there-any-way-to-determine-the-reliability-of-a-resource-before-i-use-it)
+    -   [Why can I not find a health check for my resource?](#why-can-i-not-find-a-health-check-for-my-resource)
+    -   [Which services are available?](#which-services-are-available)
+    -   [Where can I get the source code?](#where-can-i-get-the-source-code)
+-   [Questions about users and curators](#questions-about-users-and-curators)
+    -   [Who are the Registry curators?](#who-are-the-registry-curators)
+    -   [Which general features are available to Registry users?](#which-general-features-are-available-to-registry-users)
 
 ## General questions and definitions
 
@@ -150,7 +183,7 @@ Identifiers.org URIs are composed of three main parts: <a name="url_structure"><
 
 Additional examples, showing the different types of URIs:
 
-- EC-code collection: <http://identifiers.org/ec-code/>
+- EC-code collection: <http://identifiers.org/ec-code>
 - EC-code record: <http://identifiers.org/ec-code/1.1.1.1>
 - 4D Nucleome record: <https://identifiers.org/4dn:4DNES265ETYQ>
 

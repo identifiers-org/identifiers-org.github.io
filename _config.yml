@@ -2,9 +2,9 @@
 title:       Identifiers.org
 group:       Identifiers.org
 email:       identifiers-org@ebi.ac.uk
-domain:      https://docs/identifiers.org
-baseurl:     /
-permalink:   docs
+domain:      https://docs.identifiers.org
+baseurl:     ""
+permalink:   https://docs.identifiers.org
 
 
 # Root repo for this project.
@@ -19,5 +19,8 @@ highlighter: rouge
 
 plugins:
   - jekyll-toc
+  - jekyll-relative-links
+  - jekyll-sitemap
+  - jekyll-github-metadata
 resolverUrl: "https://cloud.identifiers.org"
 registryUrl: "https://registry.identifiers.org"
