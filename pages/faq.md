@@ -155,6 +155,7 @@ The Registry records for each data collection the following information:
 |          Date of creation | When the collection was added to the Registry.                                                      |
 | Date of last modification | Date of the last modification to this collection record in the Registry.                            |
 |        Deprecation status | Whether the record is still active or not and the data that we marked it as inactive                |
+{: .hover }
 
 In addition, most of the elements recorded by the Registry (such as collections and resources) have unique identifiers associated to them. 
 These are the namespace prefixes and provide codes which are used by our [resolution service](/pages/services.html#resolver) 

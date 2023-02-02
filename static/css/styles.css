@@ -296,49 +296,46 @@ h1 {
 }
 
 .funding-ul {
-  align-items: center;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.funding-ul-small {
-  align-items: center;
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.funding-li {
-  margin: .5rem 0;
+.funding-li.large {
   width: 256px;
 }
 
-.funding-li-elixir {
-  margin: 2rem 1rem 0 1rem;
+.funding-li.large.elixir {
   width: 192px;
 }
 
-.funding-li-small {
-  margin: 2rem 1rem;
-  height: 2rem;
+.funding-ul > li {
+  margin: 1rem 1rem;
+  display:flex;
+  align-items: center;
+  justify-content:center;
 }
 
-.funding-li-medium {
-  margin: 2rem 1rem;
-  height: 3.25rem;
+.funding-li.small {
+  height: 2.5rem;
 }
 
-th, tr:last-child {
-  border-bottom: solid 1px;
+.funding-li.medium {
+  height: 3.75rem;
 }
 
-tr:nth-child(2n) > td {
-  background: Gainsboro;
+#funding_numbers_table tbody {
+  border: none;
 }
 
-th {
-  border-top: solid 1px;
+#funding_numbers_table td {
+  background-color: white;
+}
+
+#funding_numbers_table td:first-child {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .title-link,

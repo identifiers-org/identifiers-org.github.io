@@ -56,3 +56,4 @@ Following is a list of resources in the Identifiers.org registry providing metad
 | mex           | Metabolome Express through OmicsDI                                    | https://www.omicsdi.org/dataset/metabolome_express/MEX36            | Yes              | https://www.omicsdi.org/           | No                   |
 | gpmdb         | GPMDB through OmicsDI                                                 | https://www.omicsdi.org/dataset/gpmdb/GPM32310002988                | Yes              | https://www.omicsdi.org/           | No                   |
 | kaggle        | Kaggle                                                                | https://www.kaggle.com/nasa/kepler-exoplanet-search-results         | Yes              | https://kaggle.com                 | No                   |
+{: .hover }
