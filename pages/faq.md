@@ -265,13 +265,12 @@ It may take some minutes for a collection to be online after it is published.
 As with submissions, it is important to note that collection entries are not updated automatically, should their associated resources change. 
 We endeavour to regularly check the validity and access to the associated resources, and do our best to keep information it up to date. 
 **However, if you are frequent user of a particular collection, and notice an issue with, for example, dereferencing an Identifiers.org URI, please let us know.** 
-Similarly, if you are the maintainer of a resource, and you are aware of some upcoming change that would affect our systems, please contact us and let us know. 
-For this purpose, you can use our [support form](pages/contact.html). 
+Similarly, if you are the maintainer of a resource, and you are aware of some upcoming change that would affect our systems, please [contact us](contact.html).
 Thank you in advance for your assistance.
 
 ### How do you modify an existing collection?
 Absolutely anyone can request the modification of an existing collection. 
-Simply contact us through the [support form](pages/contact.html).
+Simply [contact us](contact.html) with the request.
 Suggested modifications need to be confirmed by a curator prior to publication to the main site.
 
 ### Who can delete an Identifiers.org URI or collection?
