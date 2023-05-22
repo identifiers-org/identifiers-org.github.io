@@ -23,5 +23,6 @@ Identifiers.org provides direct access to the identified data using one selected
 URI resolution pattern:
 ```http://identifiers.org/[namespace]/[entity]``` eg: http://identifiers.org/pdb/2gc4.
 
+Recommendation scores are mainly based on two aspects, officiality and disponibility. Official resources take top priority when resolving compact identifiers. These are marked as "Primary" on our registry and are always used even if other resources are available. When an primary resource is not available, other resources are picked based on observed disponibility of links. We employ a periodic link checker service that verifies valid HTTP responses from known links and scores resources accordingly. These scores are part of the resolver API response.
 
 
