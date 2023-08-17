@@ -71,7 +71,7 @@ We invite you to use our [resolution service](/pages/services.html#resolver) to 
 
 1. The collection you are looking for may have already been submitted, but is in the curation pipeline and hence not yet publicly available. 
 2. The collection does not exist in the Registry, as it has never been submitted. You may [make the request](https://registry.identifiers.org/prefixregistrationrequest) yourself.
-3. The collection does exist, but our search features where not able to help you find it. Feel free to [contact us](/pages/contact.html), and we will help you find what you need.
+3. The collection does exist, but our search features where not able to help you find it. Feel free to [contact us](/pages/contact), and we will help you find what you need.
 
 ### Are there plans to include more data collections?
 The content of the Registry is always open to be expended, but efforts are based on users needs. 
@@ -270,7 +270,7 @@ Thank you in advance for your assistance.
 
 ### How do you modify an existing collection?
 Absolutely anyone can request the modification of an existing collection. 
-Simply [contact us](contact.html) with the request.
+Simply [contact us](contact) with the request.
 Suggested modifications need to be confirmed by a curator prior to publication to the main site.
 
 ### Who can delete an Identifiers.org URI or collection?
@@ -360,7 +360,7 @@ The Registry provides an extensive [REST API](/pages/api.html), particularly for
 
 ### Where can I get the source code?
 All source code related to identifiers.org is available, under the terms of the GNU General Public License, through our [GitHub page](https://github.com/identifiers-org).
-Please [contact us](/pages/contact.html) if you have any enquiries about the software and its source code.
+Please [contact us](/pages/contact) if you have any enquiries about the software and its source code.
 
 ## Questions about users and curators
 ### Who are the Registry curators?
