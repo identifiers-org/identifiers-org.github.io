@@ -6,5 +6,4 @@ gem 'bundle'
 gem 'jekyll'
 gem 'jekyll-toc'
 gem 'jekyll-relative-links'
-gem "jekyll-github-metadata"
 gem "jekyll-sitemap"

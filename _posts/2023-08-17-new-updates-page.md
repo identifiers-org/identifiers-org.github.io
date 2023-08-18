@@ -3,7 +3,6 @@ layout: default
 title: New updates page
 description: We are adding this page to better disclose information on updates to identifiers.org.
 categories: updates
-permalink: /updates/:title
 ---
  
 # The updates list is the newest way to keep up to dates with identifiers.org
