@@ -12,6 +12,12 @@
   margin-bottom: .5rem;
 }
 
+@media screen and (max-width: 500px) {
+  #top-of-page-button {
+    display: none;
+  }
+}
+
 #sidebar li {
   margin-bottom: .25rem;
 }
