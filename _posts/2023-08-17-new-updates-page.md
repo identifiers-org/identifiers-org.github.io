@@ -19,8 +19,8 @@ After plenty of issues with the request forms, we have remade these forms in the
 We have changed the behaviour of our redirection endpoint to display a better error page when a link to an invalid compact identifier is accessed.
 
 Examples:
-- <http://identifiers.org/not_a_namespace>
-- <http://identifiers.org/uniprot:invalid_id>
+- <http://identifiers.org/not-a-namespace>
+- <http://identifiers.org/uniprot:invalid-id>
 
 This replaces a text-only old white page that used to be show.
 
@@ -34,7 +34,7 @@ These can be seen on our registry pages.
 
 This section shows the info for the user on how many resolutions occurred for the previous month.
 
-A API endpoint was also added to collect this information. Please visit the [API page](/pages/api) for more information
+An API endpoint was also added to collect this information. Please visit the [API page](/pages/api) for more information
 
 ### Faster resolution responses for single resource namespaces
 
@@ -45,7 +45,7 @@ That results in fewer database queries and inter-service communication, which wo
 ### Institution data curation
 
 We recently went through institution information in our registry to include missing descriptions and home page URLs. 
-There is still some missing information and we will continue our efforts to fill these in, 
+There is still some missing information, and we will continue our efforts to fill these in, 
 but we also count on our community to fill these in.
 
 ### Other ways to collect information

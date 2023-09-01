@@ -97,6 +97,8 @@ Details are provided below.
 - [Validate requester's email](#validaterequesteremail)
 - [Validate requester's name](#validaterequestername)
 
+##### Usage statistics
+- [Namespace usage](#statisticsnamespaceusage)
 
 
 
@@ -382,6 +384,9 @@ Details are provided below.
             "providerDescription": "A description with more than 50 characters for the institution.",
             "providerHomeUrl": "https://www.example.com",
             "providerUrlPattern": "https://httpstat.us/{$id}",
+            "protectedUrls": false,
+            "authHelpUrl": null,
+            "authHelpDescription": null,
             "providerLocation": "GB",
             "requester": {
                 "name": "John Doe",
@@ -405,11 +410,12 @@ Details are provided below.
 
 
 <i class="icon icon-common icon-info text-primary"></i>
-This request will intentionally fail due to the field `institutionHomeUrl: "https://www.example.com"` containing a malformed URL. 
+This request will intentionally fail due to the field `institutionHomeUrl: "https://www.example.com"` containing a malformed URL.
 
 <i class="icon icon-common icon-exclamation-triangle text-warning"></i>
 Please keep in mind **this is a live endpoint** creating Prefix registration request entries. 
 We would kindly request not to use it to test your application or spam it in any other way.
+Preferentially, use our [request form](https://registry.identifiers.org/prefixregistrationrequest).
 
 
 
@@ -1013,4 +1019,32 @@ To validate a Regex pattern, the Sample ID must also be provided, so the Regex c
         }
     }
     ```
+{: .list-none}
+
+
+#### Usage statistics
+
+##### Namespace data
+{: #statisticsnamespaceusage }
+
+- **Endpoint:** `https://registry.api.identifiers.org/statistics/namespace/:namespacePrefix`
+- **Method:** GET
+- **Description:** Retrieves usage data for namespace by prefix
+- **Parameters:**
+    - `namespacePrefix` **Required** **PathVariable** Prefix of namespace data to retrieve
+- **Output**
+```json
+{
+    "apiVersion": "1.0",
+    "errorMessage": null,
+    "payload": {
+        "nb_uniq_visitors": 3,
+        "nb_visits": 4
+    }
+}
+```
+- **Example:**
+    - <https://registry.api.identifiers.org/statistics/namespace/4dn>
+    - &#8618; Retrieve usage data for the uniprot namespace
+    {: .list-none} 
 {: .list-none}
