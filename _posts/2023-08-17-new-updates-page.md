@@ -24,7 +24,7 @@ Examples:
 
 This replaces a text-only old white page that used to be show.
 
-### Usage statistics endpoint
+### Usage data endpoint
 
 We recently deployed a usage analytics tool to better understand our users. 
 This also allowed us to provide usage information to our users. 
@@ -33,6 +33,9 @@ These can be seen on our registry pages.
 ![usage data](/static/img/usage_stats.jpg){:.horizontal-image}
 
 This section shows the info for the user on how many resolutions occurred for the previous month.
+
+<i class="icon icon-common icon-info text-primary"></i>
+This feature is still in trial and may be removed in the future.
 
 An API endpoint was also added to collect this information. Please visit the [API page](/pages/api) for more information
 

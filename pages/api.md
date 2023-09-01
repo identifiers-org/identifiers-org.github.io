@@ -1048,3 +1048,6 @@ To validate a Regex pattern, the Sample ID must also be provided, so the Regex c
     - &#8618; Retrieve usage data for the uniprot namespace
     {: .list-none} 
 {: .list-none}
+
+<i class="icon icon-common icon-info text-primary"></i>
+This feature is still in trial and may be removed in the future.
