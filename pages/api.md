@@ -1045,7 +1045,7 @@ To validate a Regex pattern, the Sample ID must also be provided, so the Regex c
 ```
 - **Example:**
     - <https://registry.api.identifiers.org/statistics/namespace/4dn>
-    - &#8618; Retrieve usage data for the uniprot namespace
+    - &#8618; Retrieve usage data for the 4dn namespace
     {: .list-none} 
 {: .list-none}
 
