@@ -1009,16 +1009,16 @@ To validate a Regex pattern, the Sample ID must also be provided, so the Regex c
     }
     ```
 - **Output:**
-    ```json
-    {
-        "apiVersion": "1.0",
-        "errorMessage": null,
-        "payload": {
-            "comment": "VALIDATION OK",
-            "token": ""
-        }
+```json
+{
+    "apiVersion": "1.0",
+    "errorMessage": null,
+    "payload": {
+        "comment": "VALIDATION OK",
+        "token": ""
     }
-    ```
+}
+```
 {: .list-none}
 
 
