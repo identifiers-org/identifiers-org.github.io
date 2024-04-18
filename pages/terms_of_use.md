@@ -13,4 +13,7 @@ For full details, please visit the Creative Commons [site](https://creativecommo
 
 ## Disclaimer
 The dataset is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. 
-In no event shall the Identifiers.org Team be liable for any claim, damages or other liability whatsoever, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the dataset or the use or other dealings in the dataset.
+In no event shall the Identifiers.org Team be liable for any claim, damages or other liability whatsoever, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the dataset or the use or other dealings in the dataset. 
+
+## Long term data preservation policy
+The dataset falls under EBI's long term data preservation policy. Please visit <https://www.ebi.ac.uk/long-term-data-preservation> for more information.
