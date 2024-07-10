@@ -10,7 +10,7 @@ The Identifiers.org SPARQL endpoint allows the conversion of URIs from one given
 
 <div class="infobox mb-1"> <i class="icon icon-common icon-info text-primary size-300 mr-2"></i>
     <p class="mb-0"> 
-        If you use this service, please let us know how you it through the aforementioned email and issue tracker. 
+        If you use this service, please let us know how it is being used through the aforementioned email or issue tracker. 
         We are very interested in how this is being used by the community and plan to improve the service in the <a href="https://github.com/elixir-europe/biohackathon-projects-2024/blob/main/13.md">2024 ELIXIR European BioHackathon</a>. Your input will be very important to ensure that this service is still useful for the community.
     </p>
 </div>
