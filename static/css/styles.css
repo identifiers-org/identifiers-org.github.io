@@ -250,14 +250,6 @@ h1 {
   align-items: center;
 }
 
-.api-comparison {
-  display: flex;
-}
-
-.api {
-  width: 50%;
-}
-
 .avatar {
   width: 124px;
   height: 124px;
@@ -265,17 +257,10 @@ h1 {
   filter: grayscale(100%);
 }
 
-.people-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .person {
   align-items: center;
   display: flex;
-  width: 48%;
-  margin-bottom: 1em;
+  margin-bottom: .5rem;
 }
 
 .person-avatar-container {
@@ -284,6 +269,7 @@ h1 {
   display: inline-block;
   min-width: 128px;
   height: 128px;
+  margin-right: .25rem;
 }
 
 .person-text-container {
@@ -304,18 +290,28 @@ h1 {
   align-items: center;
   background-color: #eaeaea;
   border: 1px solid #cacaca;
-  display: flex;
   margin: 0 4rem;
-  padding: 1rem;
+  padding: 1rem .5rem;
+  display: block;
 }
 
-.cdl-link,.cdl-link:hover {
-  min-width: 200px;
+@media print, screen and (min-width: 40em) {
+  .cdl {
+    display: flex;
+  }
+}
+
+.cdl-link {
   border-bottom: none;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
 }
 
 .cdl > p {
-  margin: 0 2rem;
+  margin: 2rem 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .funding-ul {
