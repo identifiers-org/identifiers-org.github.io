@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Improved SPARQL documentation
-description: The documentation for sparql has been updated.
+description: The documentation for sparql has been updated with the correct endpoint and query examples.
 categories: updates
 ---
 

@@ -345,7 +345,15 @@ Details are provided below.
 - **Endpoint:** [`https://registry.api.identifiers.org/resolutionApi/getResolverDataset`](https://registry.api.identifiers.org/resolutionApi/getResolverDataset)
 - **Method:** GET
 - **Description:** Returns a copy of the whole registry.
-{: .list-none}
+- **Parameters:**
+  - `rewriteForEmbeddedPrefixes` **<u>Currently in testing.</u>** This flag removes prefixes from the URL patterns of namespaces that have the "Prefix embedded in LUI" flag set. This aims to solve the issue that some users have to namespaces like [GO](https://registry.identifiers.org/registry/go) and [MGI](https://registry.identifiers.org/registry/mgi) that commonly have references stored as full compact identifiers. Now users can directly plug the full compact identifier into URL patterns instead of having to split it themselves. This is an optional feature to not affect current users of the dataset. Please let us know if this is not working as intended. [Example](https://registry.api.identifiers.org/resolutionApi/getResolverDataset?rewriteForEmbeddedPrefixes=true).
+  {: .list-none}
+- **Example:**
+  - <https://registry.api.identifiers.org/resolutionApi/getResolverDataset>
+  - &#8618; List of namespaces and resources as they are on the registry.
+  - <https://registry.api.identifiers.org/resolutionApi/getResolverDataset?rewriteForEmbeddedPrefixes=true>
+  - &#8618; List of namespaces and resources with rewritten URL patterns.
+  {: .list-none}
 
 
 
