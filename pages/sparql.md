@@ -21,7 +21,7 @@ This SPARQL Endpoint is implemented using Sesame openRDF platform. SPARQL query 
 The source code for this can be found at <https://github.com/identifiers-org/sparql-identifiers>. Special thanks to [Jerven Bolleman](https://orcid.org/0000-0002-7449-1266) for the contributions to this service.
 
 ## SPARQL query examples
-Run the examples marked with [1] directly on our endpoint via <https://yasgui.org/>.
+Run the examples marked with [1] directly on our endpoint via some SPARQL client (example <https://yasgui.org/>).
 
 Run the examples marked with [2] on the Uniprot SPARQL endpoint at <https://sparql.uniprot.org/sparql>. Beware that these may take a while to respond.
 
@@ -47,7 +47,18 @@ SELECT * WHERE {
 }
 ```
 
+#### List active rhea URLs using the `id:active` named graph [1].
+{: .mt-2}
 
+```sparql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT *
+WHERE {
+  GRAPH <id:active> {
+    <https://identifiers.org/rhea:12345> owl:sameAs ?obj .
+  }
+} LIMIT 10
+```
 
 
 

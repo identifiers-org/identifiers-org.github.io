@@ -402,3 +402,15 @@ hr {
     margin: .5rem auto;
   }
 }
+
+.language-sparql .k {
+  color: #639c43;
+}
+
+.language-sparql .nn {
+  color: #0086b4;
+}
+
+.language-sparql .ss {
+  color: rgb(160, 0, 160);
+}
