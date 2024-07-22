@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Identifiers.org FAQ
+title: FAQ
+description: Frequently Asked Questions about identifiers.org services
 toc: false # Set this to true and build locally to regenerate toc 
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: resolution mechanism
+description: Documentation on how compact identifiers are resolved in identifiers.org
 ---
 
 # <i class="icon icon-common icon-search"></i> Resolving mechanisms

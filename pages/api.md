@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Api documentation
+title: REST API documentation
+description: Details of identifiers.org REST API endpoints
 ---
 
 <a id="top-of-page-button" href="#"><i class="icon icon-common icon-caret-square-up"></i></a>

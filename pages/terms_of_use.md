@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Identifiers.org Terms of Use
+title: Terms of Use
 ---
 
 # <i class="icon icon-common icon-handshake"></i> Terms of Use

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: job oportunities
 ---
 
 # <i class="icon icon-common icon-unassigned-job"></i> Join Identifiers.org team

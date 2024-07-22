@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: identification scheme
+description: Primer on compact identifiers and identifiers.org IRIs
 ---
 
 ## Identification of data entities using Compact Identifiers

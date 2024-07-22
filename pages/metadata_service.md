@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: metadata service
 ---
 
 # <i class="icon icon-common icon-mapping"></i> Metadata Service

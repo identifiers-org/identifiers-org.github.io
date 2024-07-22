@@ -1,15 +1,22 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ site.title }}</title>
-
-  <meta name="description" content="Identifiers.org">
-  <meta name="keywords" content="persistent identifiers, life siences, semantic web">
+  {% if page.title != nil %}
+    <title>{{ site.title }} {{ page.title }}</title>
+  {% else %}
+    <title>{{ site.title }}</title>
+  {% endif %}
+  {% if page.description != nil %}
+  <meta name="description" content="{{ page.description }}">
+  {% else %}
+    <meta name="description" content="Identifiers.org">
+  {% endif %}
+  <meta name="keywords" content="persistent identifiers, life sciences, semantic web">
   <meta name="author" content="EMBL-EBI">
   <meta name="HandheldFriendly" content="true" />
   <meta name="MobileOptimized" content="width" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0086B4">                             <!-- Android Chrome mobile browser tab color -->
-  <meta name="ebi:owner" content="Javier Ferrer">                         <!-- Who should be contacted about changes -->
+  <meta name="ebi:owner" content="Henning Hermjakob">                         <!-- Who should be contacted about changes -->
   <meta name="ebi:review-cycle" content="unspecified">                    <!-- In days, how often should the content be reviewed -->
   <meta name="ebi:last-review" content="2019-05">                         <!-- The last time the content was reviewed -->
   <meta name="ebi:expiry" content="unspecified">                          <!-- When this content is no longer relevant -->

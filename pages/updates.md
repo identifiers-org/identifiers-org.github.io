@@ -1,6 +1,6 @@
 ---
-title: identifiers.org updates page
 layout: default
+title: updates page
 ---
 
 <h1> 

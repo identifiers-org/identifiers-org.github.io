@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: SPARQL
+description: SPARQL endpoint documentation
 ---
 
 # SPARQL Endpoint

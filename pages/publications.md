@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Identifiers.org documentation
+title: publications
 ---
 
 # <i class="icon icon-common icon-publication"></i> Publications
