@@ -5,31 +5,83 @@ description: SPARQL endpoint documentation
 ---
 
 # SPARQL Endpoint
-The Identifiers.org SPARQL endpoint allows the conversion of URIs from one given scheme to the alternative equivalent ones. This was specially developed with semantic data integration in mind, where one often needs to consume heterogeneous datasets which use different types of URIs. This service relies on URI schemes recorded in the Registry. If you find a URI which is not yet listed directly by emailing us at <a href="mailto:identifiers-org@ebi.ac.uk">identifiers-org@ebi.ac.uk</a> or at our issues page at <https://github.com/identifiers-org/identifiers-org.github.io/issues>.
-
-**Please note the Identifiers.org SPARQL endpoint is running at <http://sparql.api.identifiers.org/sparql>**
+The Identifiers.org SPARQL endpoint allows for [URL resolution](#resolving-urls-with-sparql) and [querying registry data](#registry-data-model).
 
 <div class="infobox mb-1"> <i class="icon icon-common icon-info text-primary size-300 mr-2"></i>
     <p class="mb-0"> 
-        If you use this service, please let us know how it is being used through the aforementioned email or issue tracker. 
-        We are very interested in how this is being used by the community and plan to improve the service in the <a href="https://github.com/elixir-europe/biohackathon-projects-2024/blob/main/13.md">2024 ELIXIR European BioHackathon</a>. Your input will be very important to ensure that this service is still useful for the community.
+        <strong> 
+            The Identifiers.org SPARQL endpoint is running at <a href="https://sparql.api.identifiers.org/sparql">https://sparql.api.identifiers.org/sparql</a>.
+        </strong> <br>
+        A web interface is also available with some examples. The code for this interface is powered by <a href="https://www.npmjs.com/package/@sib-swiss/sparql-editor">sparql-editor</a>.
     </p>
 </div>
 
-## Implementation
-This SPARQL Endpoint is implemented using Sesame openRDF platform. SPARQL query results are generated on the fly using the Registry's database content. Queries must match URIs and URLs through the `owl:sameAs` property and other types of queries are ignored. Therefore, this SPARQL Endpoint will not allow you to list all content in the database. It is meant to be used in [federated queries](https://www.w3.org/TR/sparql11-federated-query/) from other endpoints. See the examples below for more details.
+
+
+## Registry data model
+Querying registry information via SPARQL allows users to connect the metadata available on these collections to their own knowledge graphs. Information such as descriptions, home pages, providing institution, and url patterns are available through this service.
+
+All registry data was modeled using the [VoID](https://www.w3.org/TR/void/) and [DCAT](https://www.w3.org/TR/vocab-dcat-3/) schemes. New terms were created for attributes that couldn't be mapped for these schemes. You will find the ontology for these terms [here](https://github.com/identifiers-org/ontop/blob/main/idorg-ontology/idorg-ontology.ttl).
+
+This has been implemented using [R2RML](https://www.w3.org/TR/r2rml/) and [ontop](https://ontop-vkg.org/). You can find the mappings employed [here](https://github.com/identifiers-org/ontop/blob/main/idorg-ontology/idorg-ontology.obda). Ontop generates triples based on these mappings and the contents of the database. You can find the code for this at our [ontop git repository](https://github.com/identifiers-org/ontop).
+
+#### VoID mappings
+The registry itself is available as a `void:Dataset` with notations such as `void:sparqlEndpoint` and `void:exampleResource`. These can be found [here](https://github.com/identifiers-org/ontop/blob/main/idorg-ontology/idorg-ontology.ttl#L232-L249).
+
+#### DCAT mappings
+The registry itself is available as a `dcat:Catalog`, while namespaces are `dcat:Dataset` and resources are mapped to `dcat:DataService`. Namespaces are associated with the catalog via the `dcat:dataset` property and resources are associated with their namespace via the `dcat:servesDataset` property.
+
+#### New terms employed
+Terms for some attributes had to be created. See the table bellow for a list of them and their respective new term. These terms are using the `idot` namespace which is expanded to the `http://identifiers.org/idot/` prefix. Formal definitions for these can be found [here](https://github.com/identifiers-org/ontop/blob/main/idorg-ontology/idorg-ontology.ttl).
+
+| Class of attribute | Registry attribute                  | idot term                   |
+|--------------------|-------------------------------------|-----------------------------|
+| Both               | Date of deactivation                | idot:deprecationDate        |
+| Both               | Approximated expiration date        | idot:deprecationOfflineDate |
+| Both               | Deactivation statement              | idot:deprecationStatement   |
+| Both               | Deactivation flag                   | idot:isDeprecated           |
+| Both               | Legacy registry identifier (MIR ID) | idot:mirid                  |
+| Both               | Sample local unique identifier      | idot:sampleID               |
+| Namespace          | Type                                | idot:Namespace              |
+| Namespace          | Local unique identifier pattern     | idot:luiPattern             |
+| Namespace          | Prefix                              | idot:prefix                 |
+| Namespace          | Successor                           | idot:sucessor               |
+| Namespace          | Associated resource                 | idot:isNamespaceOf          |
+| Resource           | Type                                | idot:Resource               |
+| Resource           | Authentication details URL          | idot:authHelpUrl            |
+| Resource           | Authentication description          | idot:authHelpDescription    |
+| Resource           | Country code                        | idot:countryCode            |
+| Resource           | Protected URLs flag                 | idot:hasProtectedUrls       |
+| Resource           | Home URL                            | idot:homepage               |
+| Resource           | primary flag                        | idot:isOfficial             |
+| Resource           | Provider code                       | idot:providerCode           |
+| Resource           | URL pattern                         | idot:urlPattern             |
+| Resource           | Associated namespace                | idot:isResourceOf           |
+
+
+
+## Resolving URLs with SPARQL
+Similarly to our resolver service, our SPARQL endpoint is capable of converting identifier.org URIs into provider URLs and vice versa. For example: `http://identifiers.org/uniprot:P12345` resolves to `http://purl.uniprot.org/uniprot/P12345` and vice versa. This was specially developed with semantic data integration in mind, where one often needs to consume heterogeneous datasets which use different types of URIs. This service relies on URI schemes recorded in the Registry. If you find a URI which is not yet listed directly or incorrectly, [contact us](/pages/contact).
+
+#### Implementation
+URL Resolution is implemented as a virtual triple store using the [RDF4J SAIL API](https://rdf4j.org/documentation/reference/sail/). This means that query results are generated on the fly using the Registry's database content, and we don't actually have these triples in our dataset.
+
+Queries must match URIs and URLs through the `owl:sameAs` property. It is meant to be used in [federated queries](https://www.w3.org/TR/sparql11-federated-query/) from other endpoints. See [the examples below](#sparql-query-examples) for more details.
 
 The source code for this can be found at <https://github.com/identifiers-org/sparql-identifiers>. Special thanks to [Jerven Bolleman](https://orcid.org/0000-0002-7449-1266) for the contributions to this service.
 
-## SPARQL query examples
-Run the examples marked with [1] directly on our endpoint via some SPARQL client (example <https://yasgui.org/>).
+
+
+
+
+### SPARQL query examples
+Run the examples marked with [1] directly on our web frontend at <https://sparql.api.identifiers.org>. More examples are available there directly.
 
 Run the examples marked with [2] on the Uniprot SPARQL endpoint at <https://sparql.uniprot.org/sparql>. Beware that these may take a while to respond.
 
-
-
 #### List identifiers.org URIs equivalent to uniprot URL [1].
 {: .mt-2}
+[See in web interface](https://sparql.api.identifiers.org?query=PREFIX%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0ASELECT%20%2A%20WHERE%20%7B%0A%20%20%3Chttp%3A%2F%2Fpurl.uniprot.org%2Funiprot%2FP12345%3E%20owl%3AsameAs%20%3Furis%20.%0A%7D)
 
 ```sparql
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -40,6 +92,7 @@ SELECT * WHERE {
 
 #### List uniprot URLs equivalent to identifiers.org URI [1].
 {: .mt-2}
+[See in web interface](https://sparql.api.identifiers.org?query=PREFIX%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0ASELECT%20%2A%20WHERE%20%7B%0A%20%20%3Chttp%3A%2F%2Fidentifiers.org%2Funiprot%3AP12345%3E%20owl%3AsameAs%20%3Furis%20.%0A%7D)
 
 ```sparql
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -50,6 +103,7 @@ SELECT * WHERE {
 
 #### List active rhea URLs using the `id:active` named graph [1].
 {: .mt-2}
+[See in web interface](https://sparql.api.identifiers.org?query=PREFIX%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0ASELECT%20%2A%0AWHERE%20%7B%0A%20%20GRAPH%20%3Cid%3Aactive%3E%20%7B%0A%20%20%20%20%3Chttps%3A%2F%2Fidentifiers.org%2Frhea%3A12345%3E%20owl%3AsameAs%20%3Fobj%20.%0A%20%20%7D%0A%7D%20LIMIT%2010)
 
 ```sparql
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
