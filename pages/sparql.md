@@ -115,6 +115,25 @@ WHERE {
 } LIMIT 10
 ```
 
+#### Get protein metadata from uniprot based on identifiers.org URI [1].
+{: .mt-2}
+[See in web interface](https://sparql.api.identifiers.org?query=PREFIX%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20up%3A%20%3Chttp%3A%2F%2Fpurl.uniprot.org%2Fcore%2F%3E%0A%0ASELECT%20%2A%20WHERE%20%7B%0A%20%20%3Chttp%3A%2F%2Fidentifiers.org%2Funiprot%3AP12345%3E%20owl%3AsameAs%20%3Fprotein%20.%0A%20%20SERVICE%20%3Chttps%3A%2F%2Fsparql.uniprot.org%2Fsparql%3E%20%7B%0A%20%20%20%20%3Fprotein%20a%20up%3AProtein%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20up%3AencodedBy%20%5B%20skos%3AprefLabel%20%3Fname%20%5D%20.%0A%20%20%7D%0A%7D%0ALIMIT%201)
+
+```sparql
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX up: <http://purl.uniprot.org/core/>
+
+SELECT * WHERE {
+  <http://identifiers.org/uniprot:P12345> owl:sameAs ?protein .
+  SERVICE <https://sparql.uniprot.org/sparql> {
+    ?protein a up:Protein ;
+             up:encodedBy [ skos:prefLabel ?name ] .
+  }
+}
+LIMIT 1
+```
+
 
 
 #### List homo-sapiens proteins with their uniprot URI and alternative URI [2].
