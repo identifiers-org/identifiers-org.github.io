@@ -5,6 +5,9 @@ title: metadata service
 
 # <i class="icon icon-common icon-mapping"></i> Metadata Service
 
+
+## Acquisition of provider page annotations 
+
 Identifiers.org metadata service enables users to extract Schema.org from landing pages of the original providers by passing in Compact Identifiers.
 
 ``
@@ -12,48 +15,111 @@ http://metadata.api.identifiers.org/{Compact Identifier}
 ``
 
 For example:
+<http://metadata.api.identifiers.org/reactome:R-HSA-446203>
+
+
+### How it works
+1. Our backend resolves the compact identifier to find the URLs to query
+2. For each URL, it loads its content and search for JSON-LD script tags
+    - Xpath query used on the loaded HTML: `//script[@type='application/ld+json']`  
+3. If multiple providers have this content available, the recommendation index from the resolver API is used to pick one.
+
+The source code can be found [here](https://github.com/identifiers-org/cloud-ws-metadata/blob/aa70412bcded9d8888c633ba2ae672bb98d049f8/src/main/java/org/identifiers/cloud/ws/metadata/models/MetadataFetcherChromeEngineBased.java).
+
+### Resources providing metadata
+Following is a list of resources in the Identifiers.org registry providing metadata (last updated 2018-12-05).
+
+[ec-code](http://identifiers.org/ec-code), [reactome](http://identifiers.org/reactome), 
+[prosite](http://identifiers.org/prosite), [cath.domain](http://identifiers.org/cath.domain), 
+[hamap](http://identifiers.org/hamap), [biosample](http://identifiers.org/biosample), 
+[fairsharing](http://identifiers.org/fairsharing), [cellosaurus](http://identifiers.org/cellosaurus), 
+[cosmic](http://identifiers.org/cosmic), [mobidb](http://identifiers.org/mobidb), 
+[hpscreg](http://identifiers.org/hpscreg), [lei](http://identifiers.org/lei), 
+[biomodels.db](http://identifiers.org/biomodels.db), [pdb](http://identifiers.org/pdb), 
+[sgd](http://identifiers.org/sgd), [wb](http://identifiers.org/wb), [fb](http://identifiers.org/fb), 
+[arrayexpress](http://identifiers.org/arrayexpress), [mgi](http://identifiers.org/mgi), 
+[rgd](http://identifiers.org/rgd), [zfin](http://identifiers.org/zfin), [narcis](http://identifiers.org/narcis), 
+[gxa.expt](http://identifiers.org/gxa.expt), [metabolights](http://identifiers.org/metabolights), 
+[rgd.qtl](http://identifiers.org/rgd.qtl), [rgd.strain](http://identifiers.org/rgd.strain), 
+[ega.study](http://identifiers.org/ega.study), [ega.dataset](http://identifiers.org/ega.dataset), 
+[pride.project](http://identifiers.org/pride.project), [lincs.data](http://identifiers.org/lincs.data), 
+[mw.study](http://identifiers.org/mw.study), [mex](http://identifiers.org/mex), 
+[gpmdb](http://identifiers.org/gpmdb), and [kaggle](http://identifiers.org/kaggle) 
+
+
+## Acquisition of metadata from other providers
+
+Following [our recent participation on the 3rd German BioHackathon](https://www.denbi.de/de-nbi-events/1762-3rd-biohackathon-germany-identifiers-bridgedb-togoid),
+we have expanded our metadata service to collect information from other metadata providing services. 
+This is implemented by retriever components that use the APIs from these services to acquire information 
+on compact identifiers. 
+The retrievers enabled and the data collected differs based on the namespace of the compact identifier.
+
+This is used in our resolution page to display metadata on resolved compact identifiers.
+
+<div class="infobox mb-1">
+   <i class="icon icon-common icon-beta text-warning size-300 mr-2"></i>
+   <p class="mb-0">
+      This feature is a work in progress. 
+      It may be modified or removed as necessary without proper warning.
+      If you are interested in it or already using it, <a href="/pages/contact">please let us know</a>.
+   </p>
+</div>
+
+### Retriever endpoints
+
+The main endpoint for the retriever API follows the pattern
+
 ``
-http://metadata.api.identifiers.org/reactome:R-HSA-446203
+https://metadata.api.identifiers.org/retrievers/{Compact Identifier}
 ``
 
-## Resources providing metadata
+This endpoint lists the available retriever endpoints for that compact identifier. It is expected to be queried first 
+discover which retrievers can contain information on that compact identifier. The response will look similarly to:
 
-Following is a list of resources in the Identifiers.org registry providing metadata (last updated 2018-12-05)
+```json
+{
+   "apiVersion": "1.0",
+   "errorMessage": null,
+   "payload": {
+      "parsedCompactIdentifier": {
+         // Same values from resolver API 
+      },
+      "ableRetrievers": [
+         "https://metadata.api.identifiers.org/retrievers/{Retriever 1}/{Compact Identifier}",
+         "https://metadata.api.identifiers.org/retrievers/{Retriever 2}/{Compact Identifier}",
+         //...
+      ]
+   }
+}
+```
 
-| Prefix        | Resource Information                                                  | Example Dataset URL                                                 | Dataset Metadata | Home URL                           | DataCatalog Metadata |
-|---------------|-----------------------------------------------------------------------|---------------------------------------------------------------------|------------------|------------------------------------|----------------------|
-| ec-code       | Enzyme nomenclature database, ExPASy (Expert Protein Analysis System) | https://enzyme.expasy.org/EC/1.1.1.1                                | Yes              | https://enzyme.expasy.org/         | Yes                  |
-| reactome      | Reactome, a curated knowledgebase of biological pathways              | https://reactome.org/content/detail/R-HSA-201451                    | Yes              | https://www.reactome.org/          | Yes                  |
-| prosite       | ExPASy PROSITE                                                        | https://prosite.expasy.org/PS00001                                  | Yes              | https://www.expasy.org/prosite/    | Yes                  |
-| cath.domain   | CATH domain at UCL                                                    | http://www.cathdb.info/domain/1cukA01                               | Yes              | http://www.cathdb.info/            | Yes                  |
-| hamap         | HAPMAP at Swiss Institute of Bioinformatics                           | https://hamap.expasy.org/unirule/MF_01400                           | Yes              | https://hamap.expasy.org/          | Yes                  |
-| biosample     | BioSamples Database at EBI                                            | https://www.ebi.ac.uk/biosamples/sample/SAMEA2397676                | Yes              | https://www.ebi.ac.uk/biosamples/  | Yes                  |
-| fairsharing   | FAIRSharing at University of Oxford                                   | https://fairsharing.org/bsg-000052                                  | Yes              | https://fairsharing.org/           | Yes                  |
-| cellosaurus   | Cellosaurus through SIB                                               | http://web.expasy.org/cellosaurus/CVCL_0030                         | Yes              | http://web.expasy.org/cellosaurus/ | Yes                  |
-| cosmic        | COSMIC Gene at Sanger                                                 | http://cancer.sanger.ac.uk/cosmic/gene/overview?ln=BRAF             | Yes              | http://cancer.sanger.ac.uk/cosmic/ | Yes                  |
-| mobidb        | MobiDB                                                                | http://mobidb.bio.unipd.it/P10636                                   | Yes              | http://mobidb.bio.unipd.it         | Yes                  |
-| hpscreg       | Human Pluripotent Stem Cell Registry                                  | https://hpscreg.eu/cell-line/BCRTi001-A                             | Yes              | https://hpscreg.eu/                | Yes                  |
-| lei           | Global LEI Index                                                      | https://www.gleif.org/lei/HWUPKR0MPOU8FGXBT394                      | Yes              | https://www.gleif.org/             | Yes                  |
-| biomodels.db  | BioModels through OmicsDI                                             | https://www.omicsdi.org/dataset/biomodels/BIOMD0000000048           | Yes              | https://www.omicsdi.org/           | No                   |
-| pdb           | Protein Databank in Europe (PDBe)                                     | http://www.pdbe.org/2gc4                                            | Yes              | http://www.pdbe.org/               | No                   |
-| sgd           | SGD through the Alliance of Genome Resources                          | https://www.alliancegenome.org/gene/SGD:S000003909                  | Yes              | https://www.alliancegenome.org     | No                   |
-| wb            | WormBase through the Alliance of Genome Resources                     | https://www.alliancegenome.org/gene/WB:WBGene00000001               | Yes              | https://www.alliancegenome.org     | No                   |
-| fb            | FlyBase through the Alliance of Genome Resources                      | https://www.alliancegenome.org/gene/FB:FBgn0011293                  | Yes              | https://www.alliancegenome.org     | No                   |
-| arrayexpress  | ArrayExpress through OmicsDI                                          | https://www.omicsdi.org/dataset/arrayexpress-repository/E-MEXP-1712 | Yes              | https://www.omicsdi.org/           | No                   |
-| mgi           | MGI through the Alliance of Genome Resources                          | https://www.alliancegenome.org/gene/MGI:2442292                     | Yes              | https://www.alliancegenome.org     | No                   |
-| rgd           | RGD through the Alliance of Genome Resources                          | https://www.alliancegenome.org/gene/RGD:2018                        | Yes              | https://www.alliancegenome.org     | No                   |
-| zfin          | ZFIN through the Alliance of Genome Resources                         | https://test.alliancegenome.org/gene/ZFIN:ZDB-GENE-041118-11        | Yes              | https://www.alliancegenome.org     | No                   |
-| narcis        | NARCIS at The Hague                                                   | http://www.narcis.nl/publication/RecordID/oai:cwi.nl:4725           | Yes              | http://www.narcis.nl/?Language=en  | No                   |
-| gxa.expt      | GXA Expt through OmicsDI                                              | https://www.omicsdi.org/dataset/atlas-experiments/E-MTAB-2037       | Yes              | https://www.omicsdi.org/           | No                   |
-| metabolights  | MataboLights through OmicsDI                                          | https://www.omicsdi.org/dataset/metabolights_dataset/MTBLS1         | Yes              | https://www.omicsdi.org/           | No                   |
-| rgd.qtl       | Rat Genome Database qTL at Medical College of Wisconsin               | http://rgd.mcw.edu/rgdweb/report/qtl/main.html?id=1354581           | Yes              | http://rgd.mcw.edu/                | No                   |
-| rgd.strain    | Rat Genome Database strain at Medical College of Wisconsin            | http://rgd.mcw.edu/rgdweb/report/strain/main.html?id=5688061        | Yes              | http://rgd.mcw.edu/                | No                   |
-| ega.study     | EGA Study through OmicsDI                                             | https://www.omicsdi.org/dataset/ega/EGAS00000000001                 | Yes              | https://www.omicsdi.org/           | No                   |
-| ega.dataset   | EGA Dataset through OmicsDI                                           | https://www.omicsdi.org/dataset/ega/EGAD00000000001                 | Yes              | https://www.omicsdi.org/           | No                   |
-| pride.project | PRIDE Project through OmicsDI                                         | https://www.omicsdi.org/dataset/pride/PXD000440                     | Yes              | https://www.omicsdi.org/           | No                   |
-| lincs.data    | Lincs through OmicsDI                                                 | https://www.omicsdi.org/dataset/lincs/LDS-1110                      | Yes              | https://www.omicsdi.org/           | No                   |
-| mw.study      | Metabolomics Workbench Study through OmicsDI                          | https://www.omicsdi.org/dataset/metabolomics_workbench/ST000900     | Yes              | https://www.omicsdi.org/           | No                   |
-| mex           | Metabolome Express through OmicsDI                                    | https://www.omicsdi.org/dataset/metabolome_express/MEX36            | Yes              | https://www.omicsdi.org/           | No                   |
-| gpmdb         | GPMDB through OmicsDI                                                 | https://www.omicsdi.org/dataset/gpmdb/GPM32310002988                | Yes              | https://www.omicsdi.org/           | No                   |
-| kaggle        | Kaggle                                                                | https://www.kaggle.com/nasa/kepler-exoplanet-search-results         | Yes              | https://kaggle.com                 | No                   |
-{: .hover }
+Then, each URL under `.payload.ableRetrivers` will query different metadata providers for information and answer with 
+a set of `label -> list of values` pairs representing the parsed metadata from that provider. 
+The response of each will look similar to:
+
+```json
+{
+    "label1": [
+        "value1",
+        "value2",
+        "value3"
+    ],
+    "label2": [
+        "value4"
+    ]
+}
+```
+
+To acquire the raw data from providers, the user may use a URL in the format:
+
+``
+https://metadata.api.identifiers.org/retrievers/{Retriever 2}/raw/{Compact Identifier}
+``
+
+### Retriever implementation
+At this time (Jan 23rd 2025), only two data retrievers are implemented:
+- [EBI Search](https://www.ebi.ac.uk), the search engine that incorporates EBI resources in addition to collaborator resources.
+- [TogoID](https://togoid.dbcls.jp), an ID conversion service implementing unique features with an intuitive web interface and an API for programmatic access.
+
+If you are interested in contributing to this list, [please reach out to us](/pages/contact).
