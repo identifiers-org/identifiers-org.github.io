@@ -11,15 +11,17 @@ The Identifiers.org SPARQL endpoint allows for [URL resolution](#resolving-urls-
     <p class="mb-0"> 
         <strong> 
             The Identifiers.org SPARQL endpoint is running at <a href="https://sparql.api.identifiers.org/sparql">https://sparql.api.identifiers.org/sparql</a>.
-        </strong> <br>
-        A web interface is also available with some examples. The code for this interface is powered by <a href="https://www.npmjs.com/package/@sib-swiss/sparql-editor">sparql-editor</a>.
+        </strong> <br/>
+        It also includes a web interface with some examples. 
+        The code for this interface is powered by <a href="https://www.npmjs.com/package/@sib-swiss/sparql-editor">sparql-editor</a>. <br/>
+        The data on this server is available at <a href="https://github.com/identifiers-org/ontop/tree/main/idorg-ontology">https://github.com/identifiers-org/ontop/tree/main/idorg-ontology</a>.
     </p>
 </div>
 
 
 
 ## Registry data model
-Querying registry information via SPARQL allows users to connect the metadata available on these collections to their own knowledge graphs. Information such as descriptions, home pages, providing institution, and url patterns are available through this service.
+Querying registry information via SPARQL allows users to connect the metadata available on these collections to their own knowledge graphs. Information such as descriptions, home pages, providing institution, and URL patterns are available through this service.
 
 All registry data was modeled using the [VoID](https://www.w3.org/TR/void/) and [DCAT](https://www.w3.org/TR/vocab-dcat-3/) schemes. New terms were created for attributes that couldn't be mapped for these schemes. You will find the ontology for these terms [here](https://github.com/identifiers-org/ontop/blob/main/idorg-ontology/idorg-ontology.ttl).
 

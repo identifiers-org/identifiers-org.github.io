@@ -356,7 +356,7 @@ Details are provided below.
   - &#8618; List of namespaces and resources with rewritten URL patterns.
   {: .list-none}
 
-
+<i class="icon icon-common icon-info text-primary"></i> This data is also available via a git repository at <https://github.com/identifiers-org/registry-data>.
 
 
 <!-- ----------------------------------------------------------------------------------------------------------------- -->
