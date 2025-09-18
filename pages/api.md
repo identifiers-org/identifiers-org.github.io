@@ -59,9 +59,9 @@ Refer to the example for more details.
 - **Request body example:**
   ```json
     {
-        "apiVersion":"1.0",
+        "apiVersion": "1.0",
         "payload": {
-            "url":"https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
+            "url": "https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
             "accession": "EBI-2307691"
         }
     }
@@ -95,9 +95,9 @@ Refer to the example for more details.
 - **Request body example:**
   ```json
     {
-        "apiVersion":"1.0",
+        "apiVersion": "1.0",
         "payload": {
-            "url":"https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
+            "url": "https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
             "accession": "EBI-2307691"
         }
     }
@@ -107,20 +107,20 @@ Refer to the example for more details.
 - **Response body example:**
   ```json
     {
-        "apiVersion":"1.0",
+        "apiVersion": "1.0",
         "errorMessage": null,
         "payload": [{
-            "prefix":"intact",
-            "possible_idorg_url":"http://identifiers.org/intact:EBI-2307691",
-            "possible_idorg_curie":"intact:EBI-2307691",
-            "lui_pattern_match":true,
-            "similarity_score":100.0
+            "prefix": "intact",
+            "possible_idorg_url": "http://identifiers.org/intact:EBI-2307691",
+            "possible_idorg_curie": "intact:EBI-2307691",
+            "lui_pattern_match": true,
+            "similarity_score": 100.0
         },{
-            "prefix":"intact.molecule",
-            "possible_idorg_url":"http://identifiers.org/intact.molecule:EBI-2307691",
-            "possible_idorg_curie":"intact.molecule:EBI-2307691",
-            "lui_pattern_match":true,
-            "similarity_score":77.5
+            "prefix": "intact.molecule",
+            "possible_idorg_url": "http://identifiers.org/intact.molecule:EBI-2307691",
+            "possible_idorg_curie": "intact.molecule:EBI-2307691",
+            "lui_pattern_match": true,
+            "similarity_score": 77.5
         },{
             ...
         }]
