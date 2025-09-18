@@ -51,7 +51,82 @@ Refer to the example for more details.
 {: .list-none}
 
 
+##### <i class="icon icon-common icon-external-link-alt mw-2"></i>Convert provider URL to identifiers.org URI
 
+- **Endpoint:** `https://resolver.api.identifiers.org/reverse/byPrefix`
+- **Method:** POST
+- **Description:** Converges a provider URL into an identifiers.org URL if an exact match is found.
+- **Request body example:**
+  ```json
+    {
+        "apiVersion":"1.0",
+        "payload": {
+            "url":"https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
+            "accession": "EBI-2307691"
+        }
+    }
+  ```
+  - &#8618; The accession attribute is optional. When undefined, the resolver will guess it based on the URL components.
+  {: .list-none}
+- **Response body example:**
+  ```json
+    {
+        "apiVersion": "1.0",
+        "errorMessage": null,
+        "payload": {
+            "prefix": "intact",
+            "possible_idorg_url": "http://identifiers.org/intact:EBI-2307691",
+            "possible_idorg_curie": "intact:EBI-2307691",
+            "lui_pattern_match": true,
+            "similarity_score": 100.0
+        }
+    }
+  ```
+  - &#8618; Response code 200 means a match was found while 204 represents no match.
+  {: .list-none}
+{: .list-none}
+
+
+##### <i class="icon icon-common icon-external-link-alt mw-2"></i>List identifiers.org URI similar to a provider URL
+
+- **Endpoint:** `https://resolver.api.identifiers.org/reverse/bySimilarity`
+- **Method:** POST
+- **Description:** Lists resources by similarity with given URL and accession. This is useful when an exact match is not available.
+- **Request body example:**
+  ```json
+    {
+        "apiVersion":"1.0",
+        "payload": {
+            "url":"https://www.ebi.ac.uk/intact/interaction/EBI-2307691",
+            "accession": "EBI-2307691"
+        }
+    }
+  ```
+  - &#8618; The accession attribute is optional. When undefined, the resolver will guess it based on the URL components.
+  {: .list-none}
+- **Response body example:**
+  ```json
+    {
+        "apiVersion":"1.0",
+        "errorMessage": null,
+        "payload": [{
+            "prefix":"intact",
+            "possible_idorg_url":"http://identifiers.org/intact:EBI-2307691",
+            "possible_idorg_curie":"intact:EBI-2307691",
+            "lui_pattern_match":true,
+            "similarity_score":100.0
+        },{
+            "prefix":"intact.molecule",
+            "possible_idorg_url":"http://identifiers.org/intact.molecule:EBI-2307691",
+            "possible_idorg_curie":"intact.molecule:EBI-2307691",
+            "lui_pattern_match":true,
+            "similarity_score":77.5
+        },{
+            ...
+        }]
+    }
+  ```
+{: .list-none}
 
 
 
