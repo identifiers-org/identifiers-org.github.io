@@ -414,3 +414,45 @@ hr {
 .language-sparql .ss {
   color: rgb(160, 0, 160);
 }
+
+#update-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
+  gap: 0 1rem;
+  padding-top: 1rem;
+}
+
+#update-list .update-item {
+  display: contents;
+}
+
+#update-list .update-item .update-date {
+  text-align: end;
+  font-size: 110%;
+}
+
+#update-list .update-item .update-title {
+  font-size: 110%;
+}
+
+#update-list .update-item .update-description {
+  grid-column: 3;
+  padding-bottom: 2rem;
+}
+
+#update-list .update-item .timeline-circle {
+  border-radius: 50%;
+  background-color: darkorange;
+  border: 1px solid rgb(130, 130, 130);
+  width: .9rem;
+  height: .9rem;
+  margin-top: 50%;
+  margin-left: .05rem;
+}
+
+#update-list .update-item .timeline-line {
+  grid-column: 2;
+  width: 1rem;
+  background: linear-gradient(rgb(130, 130, 130), rgb(130, 130, 130)) no-repeat center/2px 100%;
+}

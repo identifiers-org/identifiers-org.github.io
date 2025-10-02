@@ -67,6 +67,7 @@ Refer to the example for more details.
     }
   ```
   - &#8618; The accession attribute is optional. When undefined, the resolver will guess it based on the URL components.
+  - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [See the source code for more details](https://github.com/identifiers-org/monorepo/blob/810d600d2ead91649849e43a824d61b1d5730522/webservices/resolver/src/main/java/org/identifiers/cloud/ws/resolver/services/reverseresolution/ReverseResolutionService.java#L68-L85).
   {: .list-none}
 - **Response body example:**
   ```json
@@ -102,7 +103,8 @@ Refer to the example for more details.
         }
     }
   ```
-  - &#8618; The accession attribute is optional. When undefined, the resolver will guess it based on the URL components.
+  - &#8618; The accession attribute is optional. When undefined, the resolver will guess it based on the URL components. 
+  - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [See the source code for more details](https://github.com/identifiers-org/monorepo/blob/810d600d2ead91649849e43a824d61b1d5730522/webservices/resolver/src/main/java/org/identifiers/cloud/ws/resolver/services/reverseresolution/ReverseResolutionService.java#L68-L85).
   {: .list-none}
 - **Response body example:**
   ```json
