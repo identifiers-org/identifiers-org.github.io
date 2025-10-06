@@ -1,0 +1,11 @@
+---
+permalink: "/updates/latest.json"
+---
+{% for update in site.categories.updates limit:1 %}
+{
+  "title": {{update.title | jsonify}},
+  "url": {{update.url | absolute_url | jsonify}},
+  "description": {{update.description | jsonify}},
+  "date": {{update.date | jsonify}}
+}
+{% endfor %}
