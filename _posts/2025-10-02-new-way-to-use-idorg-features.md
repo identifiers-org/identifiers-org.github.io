@@ -1,7 +1,7 @@
 ---
 layout: default
 title: New ways to use our resolution services!
-description: New addon, widgets, and MCP functionality
+description: New addon for your browser, widgets for developers, and MCP functionality for AI agents
 categories: updates
 ---
 
