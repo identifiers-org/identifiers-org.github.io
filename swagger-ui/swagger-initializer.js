@@ -5,7 +5,7 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     urls: [{
       name: "Resolver service",
-      url: "http://resolver.api.identifiers.org/v3/api-docs"
+      url: "https://resolver.api.identifiers.org/v3/api-docs"
     }],
     dom_id: '#swagger-ui',
     deepLinking: false,
