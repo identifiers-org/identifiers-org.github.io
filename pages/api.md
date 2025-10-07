@@ -19,8 +19,9 @@ description: Details of identifiers.org REST API endpoints
 </div>
 
 	
-The rest of the API service infrastructure is divided in two different areas: [Resolution
-API](#resolution) and [Registry API](#registry).
+The rest of the API service infrastructure is divided in two different areas: [Resolution API](#resolution) and [Registry API](#registry). 
+
+Swagger UI is available at: <{{ "/swagger-ui" | absolute_url }}>. Use selector on the top-right to switch between services.
 	
 
 
