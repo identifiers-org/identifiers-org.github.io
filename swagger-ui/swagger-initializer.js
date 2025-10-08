@@ -4,8 +4,11 @@ window.onload = function() {
   // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
     urls: [{
-      name: "Resolver service",
+      name: "Resolver",
       url: "https://resolver.api.identifiers.org/v3/api-docs"
+    }, {
+      name: "Registry",
+      url: "https://registry.api.identifiers.org/v3/api-docs"
     }],
     dom_id: '#swagger-ui',
     deepLinking: false,
@@ -17,7 +20,7 @@ window.onload = function() {
       SwaggerUIBundle.plugins.DownloadUrl
     ],
     layout: "StandaloneLayout",
-    supportedSubmitMethods: []
+    supportedSubmitMethods: [] // This disables the 'try it out' feature which doesn't work with the resolver
   });
 
   //</editor-fold>

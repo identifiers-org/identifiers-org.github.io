@@ -21,7 +21,14 @@ description: Details of identifiers.org REST API endpoints
 	
 The rest of the API service infrastructure is divided in two different areas: [Resolution API](#resolution) and [Registry API](#registry). 
 
-Swagger UI is available at: <{{ "/swagger-ui" | absolute_url }}>. Use selector on the top-right to switch between services.
+
+<div class="infobox">
+<i class="icon icon-common icon-new text-secondary size-300 mr-2"></i>
+<p class="mb-0">
+    Swagger UI is available at: <a href="../swagger-ui">https://docs.identifiers.org/swagger-ui</a>. <br/>
+    Use selector on the top-right to switch between services.
+</p> 
+</div>
 	
 
 
